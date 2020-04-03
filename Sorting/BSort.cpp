@@ -10,7 +10,8 @@ void swap(int *a, int *b)
 
 void partition(int arr[], int lb, int ub, int *val)
 {
-	int a = arr[lb];
+	int pv = (ub-lb+1)>>1;
+	int a = arr[pv];//arr[lb];
 	int llb = lb;
 	int uub = ub;
 
@@ -20,33 +21,33 @@ void partition(int arr[], int lb, int ub, int *val)
 		{
 			llb++;
 
-			if (arr[llb] < arr[llb-1])
-				swap(&arr[llb], &arr[llb-1]);
-			
+			if ((arr[llb] < arr[llb-1]) && (llb-1 >= lb))
+				swap(&arr[llb], &arr[llb-1]);			
 		}
 		while(arr[uub] > a)
 		{
 			uub--;
 
-			if (arr[uub] > arr[uub+1])
-				swap(&arr[uub], &arr[uub+1]);			
+			if ((arr[uub] > arr[uub+1]) && (uub+1 <= ub))
+				swap(&arr[uub], &arr[uub+1]);
 		}
 
 		if (llb < uub) {
 			swap(&arr[llb], &arr[uub]);
 
-			if (arr[llb] < arr[llb-1])
+			if ((arr[llb] < arr[llb-1]) && (llb-1 >= lb))
 				swap(&arr[llb], &arr[llb-1]);
 
-			if (arr[uub] > arr[uub+1])
+			if ((arr[uub] > arr[uub+1]) && (uub+1 <= ub))
 				swap(&arr[uub], &arr[uub+1]);
 		}
 	}
-
+	//arr[pv] = arr[uub];
 	arr[lb] = arr[uub];
 	arr[uub] = a;
 	*val = uub;
 }
+
 
 void BSort(int arr[], int st, int en)
 {
