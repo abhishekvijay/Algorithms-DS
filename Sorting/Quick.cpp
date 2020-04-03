@@ -1,6 +1,8 @@
 
 #include <stdio.h>
 
+static int count = 0;
+
 void swap(int *a, int *b)
 {
 	int temp = *a;
@@ -31,6 +33,8 @@ void partition(int arr[], int lb, int ub, int *val)
 
 void quickSort(int arr[], int st, int en)
 {
+	count++;
+
 	if (en <= st)
 		return;
 
@@ -43,15 +47,59 @@ void quickSort(int arr[], int st, int en)
 	quickSort(arr, j+1, en);
 }
 
+void quickSort_Opt1(int arr[], int st, int en)
+{
+	count++;
+
+	int j = 0;
+
+	while (st < en)
+	{
+		partition(arr, st, en, &j);
+
+		quickSort_Opt1(arr, st, j-1);
+
+		st = j+1;
+	}
+}
+
+void quickSort_Opt2(int arr[], int st, int en)
+{
+	count++;
+
+	int j = 0;
+
+	while (st < en)
+	{
+		partition(arr, st, en, &j);
+
+		if (j-st < en-j)
+		{
+			quickSort_Opt2(arr, st, j-1);
+			st = j+1;
+		}
+		else
+		{
+			quickSort_Opt2(arr, j+1, en);
+			en = j-1;
+		}
+	}
+}
 
 int main()
 {
 	int arr[10] = {23,45,12,89,34,75,99,62,92,16};
 
-	quickSort(arr, 0, 9);
+//	quickSort(arr, 0, 9);
+
+//	quickSort_Opt1(arr, 0, 9);
+
+	quickSort_Opt2(arr, 0, 9);
 
 	for(register int i=0; i<10; ++i)
 		printf("%d ", arr[i]);
+
+	printf("\n count - %d \n", count);
 
 	return 0;
 }
