@@ -6,15 +6,15 @@
 /* never to use array representaiton of BT while using sorting
 reason - too much space is wasted, better use linked implementation */
 
-typedef struct TREENODE
+typedef struct TREENODEARR
 {
 	int val; 
 	int use;
-}TNode;
+}TNodeArr;
 
-TNode tree[MAX];
+TNodeArr tree[MAX];
 
-void makeTree(int val)
+void makeTreeArr(int val)
 {
 	tree[0].val = val;
 	tree[0].use = 1;
@@ -27,13 +27,13 @@ void makeTree(int val)
 	return;
 }
 
-void setLeft(int p, int val)
+void setLeftArr(int p, int val)
 {
 	int q = 2*p+1;
 
 	printf("pos[%d], val[%d]\n", q, val);
 
-	if (q>=MAX)
+	if (q >= MAX)
 		return; //overflow
 	else if (tree[q].use == 1)
 		return; //duplicate
@@ -45,7 +45,7 @@ void setLeft(int p, int val)
 	return;
 }
 
-void setRight(int p, int val)
+void setRightArr(int p, int val)
 {
 	int q = 2*p+2;
 
@@ -63,11 +63,14 @@ void setRight(int p, int val)
 	return;
 }
 
-void createTree(int *ptr, int st, int en)
+void createTreeArr(int *ptr, int st, int en)
 {
+	if (ptr == 0)
+		return; //invalid array
+
 	register int i;
 
-	makeTree(ptr[0]);
+	makeTreeArr(ptr[0]);
 
 	int p, q, val;
 
@@ -87,17 +90,24 @@ void createTree(int *ptr, int st, int en)
 		}
 
 		if (val < tree[p].val)
-			setLeft(p, val);
+			setLeftArr(p, val);
 		else
-			setRight(p, val);
+			setRightArr(p, val);
 	}
+}
+
+void createTreeLkd(int *ptr, int st, int en)
+{
+	return;
 }
 
 int main()
 {
 	int arr[10] = {10,15,2,40,78,21,19,68,32,9};
 
-	createTree(arr, 0, 9);
+//	createTreeArr(arr, 0, 9);
+
+	createTreeLkd(arr, 0, 9);
 
 //	inOrderTraverse();
 
