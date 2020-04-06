@@ -1,10 +1,13 @@
 
 #include <stdio.h>
+#include <malloc.h>
 
 #define MAX		100
 
 /* never to use array representaiton of BT while using sorting
 reason - too much space is wasted, better use linked implementation */
+
+/*####################################################################*/
 
 typedef struct TREENODEARR
 {
@@ -96,10 +99,101 @@ void createTreeArr(int *ptr, int st, int en)
 	}
 }
 
-void createTreeLkd(int *ptr, int st, int en)
+/*####################################################################*/
+
+typedef struct TREENODELKD {
+	int val;
+	TREENODELKD *lft;
+	TREENODELKD *rgt;
+} TNodeLkd;
+
+TNodeLkd *treeLkd = 0;
+
+TNodeLkd* addNode(int x)
 {
+	TNodeLkd *node = (TNodeLkd *)malloc(sizeof(TNodeLkd));
+	if (node != 0) {
+		node->val = x;
+		node->lft = 0;
+		node->rgt = 0;
+	}
+	return node;
+}
+
+void setLeftLkd(TNodeLkd *tree, int x)
+{
+	if (tree == 0)
+		return; //invalid tree
+	else if (tree->lft != 0)
+		return; //already occupied
+	else 
+		tree->lft = addNode(x);
 	return;
 }
+
+void setRightLkd(TNodeLkd *tree, int x)
+{
+	if (tree == 0)
+		return; //invalid tree
+	else if (tree->rgt != 0)
+		return; //already occupied
+	else
+		tree->rgt = addNode(x);
+	return;
+}
+
+void createTreeLkd(int *ptr, int st, int en)
+{
+	treeLkd = addNode(ptr[st]);
+
+	TNodeLkd *p=0, *q=0;
+	int val;
+
+	for(register int i = 1; i<=en; ++i)
+	{
+		val = ptr[i];
+		p = q = treeLkd;
+
+		while(q != 0)
+		{
+			p = q;
+			if (val < p->val)
+				q = p->lft;
+			else
+				q = p->rgt;
+		}
+
+		if (val < p->val)
+			setLeftLkd(p, val);
+		else
+			setRightLkd(p, val);
+	}
+}
+
+void inOrderTraverse(TNodeLkd *ptr)
+{
+	if (ptr == 0)
+		return;
+
+	inOrderTraverse(ptr->lft);
+
+	printf("%d ", ptr->val);
+
+	inOrderTraverse(ptr->rgt);
+}
+
+void deleteTree(TNodeLkd *ptr)
+{
+	if (ptr == 0)
+		return;
+
+	deleteTree(ptr->lft);
+	deleteTree(ptr->rgt);
+	printf(" %d", ptr->val);
+	free(ptr); ptr = NULL;
+}
+
+/*####################################################################*/
 
 int main()
 {
@@ -109,7 +203,11 @@ int main()
 
 	createTreeLkd(arr, 0, 9);
 
-//	inOrderTraverse();
+	inOrderTraverse(treeLkd);
+
+	printf("\n");
+
+	deleteTree(treeLkd);
 
 	return 0;
 }
