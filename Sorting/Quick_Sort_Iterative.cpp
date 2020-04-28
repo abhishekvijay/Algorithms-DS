@@ -42,9 +42,9 @@ void recursive_qsort(int *OrgPtr, int lb, int ub)
 
 	partition(OrgPtr, lb, ub, &j);
 
-	traditional_qsort(OrgPtr, lb, j-1);
+	recursive_qsort(OrgPtr, lb, j-1);
 
-	traditional_qsort(OrgPtr, j+1, ub);
+	recursive_qsort(OrgPtr, j+1, ub);
 #else //optimized solution with less function calls
 	int j = 0;
 
@@ -68,7 +68,7 @@ typedef struct bndtype {
 
 typedef struct staick {
 	int top;
-	boundtype bounds[100]; //MAX bnds
+	boundtype bounds[100]; //MAX bounds
 } stack;
 
 void push(stack *stck, boundtype obj)
