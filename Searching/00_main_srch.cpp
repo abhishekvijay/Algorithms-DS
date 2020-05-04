@@ -15,6 +15,7 @@ extern void list_indxd_seq_srch();
 //binary search
 extern void iter_binary_srch();
 extern void recur_binary_srch();
+extern void custom_binary_srch();
 //circular list
 extern void circular_list_srch();
 //doubly linked list
@@ -35,8 +36,9 @@ int main()
 	list_indxd_seq_srch();
 
 	/* binary search */
-	iter_binary_srch();
-	recur_binary_srch();
+//	iter_binary_srch();
+//	recur_binary_srch();
+	custom_binary_srch();
 
 	/* circular list search */
 	circular_list_srch();
