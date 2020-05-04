@@ -1,3 +1,4 @@
+#if 0
 
 #include <stdio.h>
 
@@ -19,9 +20,6 @@ extern void opt_bubble_sort(int *ptr, int st, int en);
 extern void merge_sort_recur(int *ptr, int st, int en);
 extern void merge_sort_iter(int *ptr, int st, int en);
 
-
-
-
 int main()
 {
 	int arr[MAX] = {67,100,32,91,61,72,89,45,12,34};
@@ -39,3 +37,5 @@ int main()
 	PRINT("After - ", arr);	
 	return 0;
 }
+
+#endif

@@ -1,4 +1,4 @@
-
+#if 0
 #include <stdio.h>
 #include <malloc.h>
 
@@ -211,3 +211,5 @@ int main()
 
 	return 0;
 }
+
+#endif
