@@ -15,6 +15,9 @@ extern void list_indxd_seq_srch();
 //binary search
 extern void iter_binary_srch();
 extern void recur_binary_srch();
+extern void few_comparison_bs();
+extern void find_floor_bs();
+extern void find_occurences_bs();
 extern void custom_binary_srch();
 //circular list
 extern void circular_list_srch();
@@ -24,7 +27,7 @@ extern void doubly_ll_srch();
 int main()
 {
 	/* sequential search */
-	arr_sequential_srch();
+//	arr_sequential_srch();
 	list_sequential_srch();
 
 	/* reordering for maximum efficiency */
@@ -36,8 +39,11 @@ int main()
 	list_indxd_seq_srch();
 
 	/* binary search */
-//	iter_binary_srch();
-//	recur_binary_srch();
+	iter_binary_srch();
+	recur_binary_srch();
+	few_comparison_bs();
+	find_floor_bs();
+	find_occurences_bs();
 	custom_binary_srch();
 
 	/* circular list search */
