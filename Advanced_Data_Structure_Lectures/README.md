@@ -2,14 +2,14 @@
 
 
 ***lec1***  
-            - Introduction; 
-            - Structure and requirements of the course; 
-            - Overview of trees and their properties.
+- Introduction; 
+- Structure and requirements of the course; 
+- Overview of trees and their properties.
 
 ***lec2*** 
-            - The C++ programming language; 
-            - comparison of C++ and Java; 
-            - introduction to OO programming in C++.
+- The C++ programming language; 
+- comparison of C++ and Java; 
+- introduction to OO programming in C++.
         
 ***lec3*** 
             - Binary search trees; 
