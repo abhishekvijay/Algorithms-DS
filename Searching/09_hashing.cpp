@@ -3,6 +3,7 @@
 #include <stdio.h>
 
 #define ul		unsigned long
+#define ull		unsigned long long
 
 #define TABLE_SZ		107 //any prime no. as per needs
 
@@ -32,7 +33,8 @@ ul hash(unsigned char *str)
 unsigned int MurmurOAAT32 ( const char * key)
 {
   unsigned int h(3323198485ul);
-  for (;*key;++key) {
+  for (;*key;++key)
+  {
     h ^= *key;
     h *= 0x5bd1e995;
     h ^= h >> 15;
@@ -40,18 +42,14 @@ unsigned int MurmurOAAT32 ( const char * key)
   return h;
 }
 //murmur hash for string - 64 bit
-unsigned long inline MurmurOAAT64 ( const char * key)
+ull MurmurOAAT64 ( const char * key)
 {
-  unsigned long h(525201411107845655ull);
-  for (;*key;++key) {
+  ull h(525201411107845655ull);
+  for (;*key;++key)
+  {
     h ^= *key;
     h *= 0x5bd1e9955bd1e995;
     h ^= h >> 47;
   }
   return h;
-}
-
-int main()
-{
-	return 0;
 }
