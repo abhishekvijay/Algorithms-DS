@@ -14,11 +14,11 @@ extern void breadth_first_search();
 
 int main()
 {
-	adj_matrix_rpstn();
-	adj_list_rpstn();
-	edge_list_rpstn();
+//	adj_matrix_rpstn();
+//	adj_list_rpstn();
+//	edge_list_rpstn();
 
-	depth_first_search();
+//	depth_first_search();
 	breadth_first_search();
 
 	return 0;
