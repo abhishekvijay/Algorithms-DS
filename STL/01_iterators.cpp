@@ -88,6 +88,15 @@ void input_iterator(void)
 	 * used - copy(), find()
 	 * arithmetic calculation - not allowed - A+1,A+2
 	 */
+
+	/* *iter				Provides read access to the actual element
+		iter->member		Provides read access to a member of the actual element
+		++iter				Steps forward (returns new position)
+		iter++				Steps forward
+		iter1 == iter2		Returns whether two iterators are equal
+		iter1 != iter2		Returns whether two iterators are not equal
+		TYPE(iter)			Copies iterator (copy constructor)
+	 */
 }
 
 void output_iterator(void)
@@ -101,6 +110,12 @@ void output_iterator(void)
 	 * used - move, find algorithms
 	 * arithmetic calculation - not allowed - A+1,A+2
 	 */
+
+	/* *iter = val			Writes val to where the iterator refers
+		++iter				Steps forward (returns new position)
+		iter++				Steps forward (returns old position)
+		TYPE(iter)			Copies iterator (copy constructor)
+	 */
 }
 
 void forward_iterator(void)
@@ -113,8 +128,18 @@ void forward_iterator(void)
 	 * swappable - 2 iterators can be swapped
 	 * used - replace(), reverse_copy()
 	 * arithmetic calculation - not allowed - A+1,A+2
-	 */
+	 */	
 
+	/* *iter				Provides access to the actual element
+		iter->member		Provides access to a member of the actual element
+		++iter				Steps forward (returns new position)
+		iter++				Steps forward (returns old position)
+		iter1 == iter2		Returns whether two iterators are equal
+		iter1 != iter2		Returns whether two iterators are not equal
+		TYPE()				Creates iterator (default constructor)
+		TYPE(iter)			Copies iterator (copy constructor)
+		iter1 = iter2		Assigns an iterator
+	*/
 	int arr[10] = {9,8,7,6,5,4,3,2,1,10};
 
 	vector<int> coll;
@@ -149,6 +174,10 @@ void bidirectional_iterator(void)
 	 * can be used in place of forward, input & output iterators
 	 * Arithmetic operation - not allowed
 	 */
+
+	/*	--iter				Steps backward (returns new position)
+		iter--				Steps backward (returns old position)
+	 */
 	int arr[10] = {9,8,7,6,5,4,3,2,1,10};
 
 	list<int> coll;
@@ -170,18 +199,85 @@ void bidirectional_iterator(void)
 
 void random_access_iterator(void)
 {
+	/* bi-directional, can read & write
+	 * Usability - multi-pass algorithms, random access of data
+	 * Dereferencing - both lvalue & rvalue, *A, A->m
+	 * Operators - ==, !=, >, <
+	 * Incremental - A++, --A
+	 * Decremental - A--, --A
+	 * Swappable - yes
+	 * Arithmetic operation - allowed A+1, A+2.. etc
+	 * used - random_shuffle();
+	 * index access - A[i] allowed
+	 * strongest iterator so can be used in place of any other iterator
+	 */
 
+	/*	iter[n]				Provides access to the element that has index n
+		iter+=n				Steps n elements forward (or backward, if n is negative)
+		iter-=n				Steps n elements backward (or forward, if n is negative)
+		iter+n				Returns the iterator of the nth next element
+		n+iter				Returns the iterator of the nth next element
+		iter-n				Returns the iterator of the nth previous element
+		iter1-iter2			Returns the distance between iter1 and iter2
+		iter1<iter2			Returns whether iter1 is before iter2
+		iter1>iter2			Returns whether iter1 is after iter2
+		iter1<=iter2		Returns whether iter1 is not after iter2
+		iter1>=iter2		Returns whether iter1 is not before iter2
+	 */
+
+	int arr[10] = {11,21,31,41,51,61,71,81,91,101};
+	int *ptr = arr;
+
+	vector<int> coll;
+	//vector<int>::iterator pos;
+
+	register int i;
+	for(i=0; i<10; ++i)
+		coll.push_back(arr[i]);
+
+	cout<<"######vector print()######"<<endl;
+	for(auto pos = coll.begin(); pos < coll.end(); ++pos)
+		cout<<"  "<<*pos;
+	cout<<endl;
+
+	cout<<"######change values######"<<endl;
+	for(auto pos = coll.begin(); pos < coll.end(); ++pos)
+		*pos = 1001;
+	for(auto pos = coll.begin(); pos < coll.end(); ++pos)
+		cout<<" "<<*pos<<" "<<*ptr++;
+	cout<<endl;
+
+	cout<<"######reverse print######"<<endl;	
+	vector<int>::iterator pos;
+	for(pos = coll.end(); pos > coll.begin(); --pos)
+	{
+		if (pos != coll.end())
+			cout<<" "<<*pos;
+	}
+	cout<<" "<<*pos;
+	cout<<endl;
+
+	cout<<"######increment & index print ######"<<endl;
+	auto cpos = coll.begin();
+	for(i=0; i<10; ++i)
+	{
+		cpos[i] += i;
+		cout<<" "<<cpos[i];
+	}
+
+	cout<<"###############"<<endl;
+	return;
 }
 
 void check_iterator()
 {
-//	general_functions();
+	general_functions();
 
-//	input_iterator();
+	input_iterator();
 
-//	output_iterator();
+	output_iterator();
 
-//	forward_iterator();
+	forward_iterator();
 
 	bidirectional_iterator();
 
