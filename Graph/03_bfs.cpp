@@ -17,6 +17,32 @@ vi adjL[15];
 int visited[15];
 queue<int> que;
 
+void run_bfs2(int node)
+{
+	register int i;
+	int que[15] = {0, };
+	int front=0, rear=0, temp = 0;
+
+	que[rear++] = node;
+	visited[node] = VISITED;
+
+	while(front != rear)
+	{
+		temp = que[front++];
+
+		cout<<" "<<temp;
+
+		for(i=0; i<(int)adjL[temp].size(); ++i)
+		{
+			if (visited[adjL[temp][i]] == UNVISITED)
+			{
+				que[rear++] = adjL[temp][i];
+				visited[adjL[temp][i]] = VISITED;
+			}
+		}
+	}
+}
+
 void run_bfs(int node)
 {
 	register int i;
