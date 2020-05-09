@@ -88,12 +88,18 @@ void output_iterator(void)
 	 * swappable - 2 iterators can be swapped
 	 * used - move, find algorithms
 	 */
-
 }
 
 void forward_iterator(void)
 {
-
+	/* unidirectional, can read & write
+	 * usability - multi-pass algorithms
+	 * operators - allowed(==,!=), not-allowed(<=,>=)
+	 * dereferencing - same as input & output iterators
+	 * incremental - ++A, A++ Ok, --A, A-- not OK
+	 * swappable - 2 iterators can be swapped
+	 * used - replace, reverse_copy
+	 */
 }
 
 void bidirectional_iterator(void)
