@@ -91,7 +91,8 @@ void breadth_first_search()
 	for(i=0; i<nodes; ++i)
 	{
 		if (visited[i] == UNVISITED)
-			run_bfs2(i);
+			run_bfs(i); //with STL queue
+			run_bfs2(i); //with array queue
 	}
 	
 	cout<<endl;
