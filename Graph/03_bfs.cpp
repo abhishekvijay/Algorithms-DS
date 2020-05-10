@@ -19,7 +19,6 @@ queue<int> que;
 
 void run_bfs2(int node)
 {
-	register int i;
 	int que[15] = {0, };
 	int front=0, rear=0, temp = 0;
 
@@ -32,12 +31,14 @@ void run_bfs2(int node)
 
 		cout<<" "<<temp;
 
-		for(i=0; i<(int)adjL[temp].size(); ++i)
+		vi::iterator pos;
+
+		for(pos = adjL[temp].begin(); pos < adjL[temp].end(); ++pos)
 		{
-			if (visited[adjL[temp][i]] == UNVISITED)
+			if (visited[*pos] == UNVISITED)
 			{
-				que[rear++] = adjL[temp][i];
-				visited[adjL[temp][i]] = VISITED;
+				que[rear++] = *pos;
+				visited[*pos] = VISITED;
 			}
 		}
 	}
@@ -81,14 +82,16 @@ void breadth_first_search()
 	{
 		cin>>u>>v;
 		adjL[u].push_back(v);
-		adjL[v].push_back(u);
-		visited[i] = UNVISITED;
+		adjL[v].push_back(u);		
 	}
 
 	for(i=0; i<nodes; ++i)
+		visited[i] = UNVISITED;
+
+	for(i=0; i<nodes; ++i)
 	{
-		if (visited[i] != VISITED)
-			run_bfs(i);
+		if (visited[i] == UNVISITED)
+			run_bfs2(i);
 	}
 	
 	cout<<endl;
