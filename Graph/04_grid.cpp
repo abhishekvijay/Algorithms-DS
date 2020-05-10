@@ -76,8 +76,8 @@ void adj_list_method(void)
 int grid[MAX][MAX];
 int mvstd[MAX][MAX];
 
-int dx[4] = {-1,0,1,0};
-int dy[4] = {0,-1,0,1};
+int dx[8] = {-1,-1,0,1,1,1,0,-1};
+int dy[8] = {0,-1,-1,-1,0,1,1,1};
 
 typedef struct POINT
 {
@@ -98,9 +98,9 @@ void bfs_matrix(int x, int y)
 	{
 		point temp = que[f++];
 
-		cout<<" "<<temp.x<<" "<<temp.y<<endl;
+		cout<<"( "<<temp.x<<","<<temp.y<<" )"<<endl;
 
-		for(i=0; i<4; ++i)
+		for(i=0; i<8; ++i)
 		{
 			x1 = temp.x + dx[i];
 			y1 = temp.y + dy[i];
@@ -124,7 +124,7 @@ void adj_matrix_method()
 	cout<<"Enter Nodes & Edges - ";
 	cin>>nodes>>edges;
 
-	//init()
+	//init
 	for(i=0; i<nodes; ++i)
 	{		
 		for(j=0; j<nodes; ++j)
@@ -134,6 +134,7 @@ void adj_matrix_method()
 		}
 	}
 
+	//create edges
 	for(i=0; i<edges; ++i)
 	{
 		cin>>u>>v;
@@ -141,6 +142,7 @@ void adj_matrix_method()
 		grid[v][u] = 1;
 	}
 
+	//process nodes
 	for(i=0; i<nodes; ++i)
 	{
 		for(j=0; j<nodes; ++j)
@@ -155,6 +157,74 @@ void adj_matrix_method()
 	return;
 }
 
+/*#######################################################################*/
+
+int dungeon[5][7] = {1,1,1,0,1,1,1,
+					 1,0,1,1,1,0,1,
+					 1,0,1,1,1,1,1,
+					 1,1,0,0,1,1,1,
+					 0,1,0,0,1,0,1};
+int dvstd[5][7];
+
+int dxi[4] = {-1,0,1,0};
+int dyi[4] = {0,-1,0,1};
+
+void dbfs(int x, int y, int *flag)
+{
+	int que[35][2] = {0, }; int temp[2] = {0, };
+	int fr=0, re=0, x1=0, y1=0;
+	register int i;
+
+	que[re][0] = x; que[re][1] = y; re += 1;
+	dvstd[x][y] = VISITED;
+
+	while (fr != re)
+	{
+		temp[0] = que[fr][0]; temp[1] = que[fr][1]; fr++;
+
+		cout<<"("<<temp[0]<<","<<temp[1]<<")"<<endl;
+		
+		if (dungeon[temp[0]][temp[1]] == 99)
+		{
+			*flag = 1;
+			break;
+		}
+		
+		for(i=0; i<4; ++i)
+		{
+			x1 = temp[0] + dxi[i];
+			y1 = temp[1] + dyi[i];
+
+			if (x1>=0 && x1<5 && y1>=0 && y1<7 && (dungeon[x1][y1]!=0) && (dvstd[x1][y1]==UNVISITED))
+			{
+				que[re][0] = x1; que[re][1] = y1; re += 1;
+				dvstd[x1][y1] = VISITED;
+			}
+		}
+	}
+}
+
+void shortest_path()
+{
+	register int i,j;
+	int IsPath = 0;
+
+	for(i = 0; i<5; ++i)
+		for(j=0; j<7; ++j)
+			dvstd[i][j] = UNVISITED;
+
+	dbfs(0,0,&IsPath);
+
+	if (IsPath)
+		cout<<"path exists"<<endl;
+	else
+		cout<<"no path exists"<<endl;
+
+	cout<<endl;
+
+	return;
+}
+
 
 void solve_grid(void)
 {
@@ -162,4 +232,5 @@ void solve_grid(void)
 
 	adj_matrix_method();
 
+	shortest_path();
 }
