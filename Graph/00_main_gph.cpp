@@ -15,13 +15,16 @@ extern void solve_grid(void);
 
 int main()
 {
-//	adj_matrix_rpstn();
-//	adj_list_rpstn();
-//	edge_list_rpstn();
+	/* different graph representations */
+	adj_matrix_rpstn();
+	adj_list_rpstn();
+	edge_list_rpstn();
 
-//	depth_first_search();
-//	breadth_first_search();
+	/* graph traversals */
+	depth_first_search();
+	breadth_first_search();
 
+	/* graph problems */
 	solve_grid();
 
 	return 0;
