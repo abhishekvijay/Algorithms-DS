@@ -1,4 +1,4 @@
-# [Algorithms & Data Structures Lecture Notes](http://cseweb.ucsd.edu/~kube/cls/100/lectures.html)
+# Advanced Data Structures [Notes](http://cseweb.ucsd.edu/~kube/cls/100/lectures.html)
 
 
 ***lec1***  
