@@ -5,7 +5,7 @@
 
 using namespace std;
 
-#define MAX		200+1
+#define MAX		1000+1
 
 int arr[MAX] = {0, };
 
@@ -15,7 +15,7 @@ int get_ugly(int n)
 
 	while (cnt <= n)
 	{
-		i = cnt;
+		i = j;
 
 		while(i%2 == 0)
 			i = i/2;
@@ -25,9 +25,9 @@ int get_ugly(int n)
 			i = i/5;
 
 		if (i == 1)
-			arr[j++] = cnt;
+			arr[cnt++] = j;
 
-		cnt += 1;
+		j += 1;
 	}
 	return arr[n];
 }
@@ -39,6 +39,9 @@ void ugly_numbers()
 	cout<<"Enter num - ";
 	cin>>n;
 
-	cout<<", ugly no - "<<get_ugly(n)<<endl;
+	cout<<"ugly no - "<<get_ugly(n);
+
+	cout<<endl;
+
 	return;
 }

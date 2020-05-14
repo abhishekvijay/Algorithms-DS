@@ -9,7 +9,7 @@ extern void fibonacci_num();
 
 int main()
 {
-	//ugly_numbers();
+	ugly_numbers();
 
 	fibonacci_num();
 
