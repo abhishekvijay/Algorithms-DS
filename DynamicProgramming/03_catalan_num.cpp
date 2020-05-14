@@ -22,11 +22,41 @@ int calc_NcR(int n, int k)
 	return num;
 }
 
+int cat[11] = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
+
+int calc_catalan(int n)
+{
+	int num = 0;
+
+#if 1  //DP Solution  
+    cat[0] = cat[1] = 1;       
+    for (int i=2; i<=n; i++) 
+    { 
+        cat[i] = 0; 
+        for (int j=0; j<i; j++) 
+            cat[i] += cat[j] * cat[i-j-1]; 
+    }      
+    return cat[n];
+
+#else //Normal solution
+
+	if (n <= 1) return 1;
+	for(int i=0; i<n; i++)
+		num += calc_catalan(i)*calc_catalan(n-i-1);	
+	return num;
+#endif
+	
+}
+
 void catalan_num(void)
 {
 	int ans = calc_NcR(8, 2);
 
-	cout<<"Val - "<<ans;
+	cout<<"NcR value - "<<ans<<endl;
+
+	ans = calc_catalan(9);  //calculates nth catalan no.
+
+	cout<<"catalan value - "<<ans;
 
 	cout<<endl;
 
