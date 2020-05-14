@@ -46,7 +46,7 @@ int tabular_fnum(int n)
 	return arr[n];
 }
 
-void fibonacci_num()
+void fibonacci_num(void)
 {
 	int num = 100;
 

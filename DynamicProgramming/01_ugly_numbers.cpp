@@ -32,7 +32,7 @@ int get_ugly(int n)
 	return arr[n];
 }
 
-void ugly_numbers()
+void ugly_numbers(void)
 {
 	int n;
 
