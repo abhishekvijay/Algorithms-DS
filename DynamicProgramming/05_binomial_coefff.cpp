@@ -6,7 +6,17 @@ using namespace std;
 
 int bi_coeff_iter(int n, int k)
 {
-	return 0;
+	if (k==0 || k==n)
+		return 1;
+
+	int ans = 1;
+	for(int i=1; i<=k; ++i)
+	{
+		ans *= (n-i+1);
+		ans /= i;
+	}
+
+	return ans;
 }
 
 int bi_coeff_rec(int n, int k)
@@ -45,7 +55,7 @@ int bi_coeff_memoized(int n, int k)
 
 void binomial_coeff(void)
 {
-	//cout<<"bi-coeff - "<<bi_coeff_iter(5,2)<<endl;
+	cout<<"bi-coeff - "<<bi_coeff_iter(10,7)<<endl;
 
 	cout<<"bi-coeff - "<<bi_coeff_rec(5,2)<<endl;
 
