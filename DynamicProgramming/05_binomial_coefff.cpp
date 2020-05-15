@@ -27,8 +27,26 @@ int bi_coeff_rec(int n, int k)
 	return (bi_coeff_rec(n-1, k-1) + bi_coeff_rec(n-1, k));
 }
 
-int t[20][20];
+int bi_coeff_tabular(int n, int k)
+{
+	register int i, j;
+	int tab[20][20];
+	
+	for(i=0; i<=n; ++i)
+	{
+		for(j=0; j<=((i<k)?i:k); ++j)
+		{
+			if (j==0 || j==i)
+				tab[i][j] = 1;
+			else
+				tab[i][j] = tab[i-1][j-1] + tab[i-1][j];
+		}
+	}
 
+	return tab[n][k];
+}
+
+int t[20][20];
 void bc_init()
 {
 	register int i, j;
@@ -56,12 +74,18 @@ int bi_coeff_memoized(int n, int k)
 
 void binomial_coeff(void)
 {
-	cout<<"iter - "<<bi_coeff_iter(10,7)<<endl;
+	int ans = bi_coeff_iter(10,7);
+	cout<<"iter - "<<ans<<endl;
 
-	cout<<"rec - "<<bi_coeff_rec(10,7)<<endl;
+	ans = bi_coeff_rec(10,7);
+	cout<<"rec - "<<ans<<endl;
+
+	ans = bi_coeff_tabular(10,7);
+	cout<<"tabular - "<<ans<<endl;
 
 	bc_init();
-	cout<<"memoized - "<<bi_coeff_memoized(10,7)<<endl;
+	ans = bi_coeff_memoized(10,7);
+	cout<<"memoized - "<<ans<<endl;
 
 	cout<<endl;
 
