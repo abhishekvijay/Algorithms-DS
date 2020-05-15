@@ -43,7 +43,8 @@ int bi_coeff_memoized(int n, int k)
 	if (t[n][k] != -1)
 		return t[n][k];
 
-	if (k=0 || k==n) {
+	if (k==0 || k==n) 
+	{
 		t[n][k] = 1;
 		return t[n][k];
 	}
@@ -55,12 +56,12 @@ int bi_coeff_memoized(int n, int k)
 
 void binomial_coeff(void)
 {
-	cout<<"bi-coeff - "<<bi_coeff_iter(10,7)<<endl;
+	cout<<"iter - "<<bi_coeff_iter(10,7)<<endl;
 
-	cout<<"bi-coeff - "<<bi_coeff_rec(5,2)<<endl;
+	cout<<"rec - "<<bi_coeff_rec(10,7)<<endl;
 
 	bc_init();
-	cout<<"bi-coeff - "<<bi_coeff_memoized(5,2)<<endl;
+	cout<<"memoized - "<<bi_coeff_memoized(10,7)<<endl;
 
 	cout<<endl;
 
