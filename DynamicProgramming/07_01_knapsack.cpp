@@ -6,6 +6,8 @@ using namespace std;
 
 #define MAX(a,b)	(a>b)?a:b
 
+/*================================================================= recursive knapsack */
+
 int rec_knapsack(int *val, int *wt, int w, int sz)
 {
 	if (sz == 0 || w == 0)
@@ -18,6 +20,8 @@ int rec_knapsack(int *val, int *wt, int w, int sz)
 	else 
 		return rec_knapsack(val, wt, w, sz-1);	
 }
+
+/*================================================================= memoized knapsack */
 
 int kst[5][55]; //table should be of the form - [n+1][w+1]
 void init_ks()
@@ -44,6 +48,8 @@ int memoized_knapsack(int *val, int *wt, int w, int sz)
 	return kst[sz][w];
 }
 
+/*================================================================= tabular knapsack */
+
 int tabular_knapsack(int *val, int *wt, int w, int sz)
 {
 	register int i, j;
@@ -66,6 +72,8 @@ int tabular_knapsack(int *val, int *wt, int w, int sz)
 	}
 	return t[sz][w];
 }
+
+/*================================================================= fractional knapsack */
 
 typedef struct ITEM {
 	int val; 
@@ -107,6 +115,8 @@ int frac_knapsack(void)
 	}
 	return finalVal;
 }
+
+/*================================================================= main function */
 
 void knapsack_01()
 {
