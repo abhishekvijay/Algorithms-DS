@@ -1,6 +1,6 @@
 
-
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
 
@@ -67,6 +67,47 @@ int tabular_knapsack(int *val, int *wt, int w, int sz)
 	return t[sz][w];
 }
 
+typedef struct ITEM {
+	int val; 
+	int wt;
+}Item;
+
+bool ks_compare(Item a, Item b)
+{
+	double r1 = double(a.val/a.wt);
+	double r2 = double(b.val/b.wt);
+
+	return r1>r2;
+}
+
+int frac_knapsack(void)
+{
+	Item arr[] = {{60,10}, {100,20}, {120,30}};
+	int sz = sizeof(arr)/sizeof(arr[0]);
+	int W = 50;
+
+	sort(arr, arr+sz, ks_compare);
+
+	int currWt=0;
+	double finalVal=0;
+
+	for(int i=0; i<sz; ++i)
+	{
+		if (currWt + arr[i].wt <= W)
+		{
+			currWt += arr[i].wt;
+			finalVal += arr[i].val;
+		}
+		else
+		{
+			int remain = W - currWt;
+			finalVal += arr[i].val*(double(remain)/arr[i].wt);
+			break;
+		}
+	}
+	return finalVal;
+}
+
 void knapsack_01()
 {
 	int val[3] = {60,100,120};
@@ -79,6 +120,8 @@ void knapsack_01()
 	cout<<"memoized - "<<memoized_knapsack(val, wt, W, 3)<<endl;
 
 	cout<<"tabular - "<<tabular_knapsack(val, wt, W, 3)<<endl;
+
+	cout<<"fractional - "<<frac_knapsack()<<endl;
 
 	cout<<endl;
 
