@@ -113,8 +113,36 @@ int frac_knapsack(void)
 			break;
 		}
 	}
-	return finalVal;
+	return (int)finalVal;
 }
+
+/*================================================================= unbounded KS */
+int ub_knapsack()
+{
+	int val[] = {10,30,20};
+	int wt[] = {5,10,15};
+	int W = 100;
+	int sz = sizeof(val)/sizeof(val[0]);
+
+	int t[101] = {-1, };
+
+	for(int i=0; i<=W; ++i)
+	{
+		for(int j=0; j<sz; ++j)
+		{
+			if (wt[j] <= i)
+				t[i] = MAX(t[i], t[i-wt[j]]+val[j]);
+		}
+	}
+	return t[W];
+}
+
+/*================================================================= unbounded fractional KS */
+int ubf_knapsack()
+{
+	return 0;
+}
+
 
 /*================================================================= main function */
 
@@ -124,14 +152,43 @@ void knapsack_01()
 	int wt[3] = {10,20,30};
 	int W = 50;	
 
+	/* recursive ks */
 	cout<<"recur - "<<rec_knapsack(val, wt, W, 3)<<endl;
 
+	/* memoized ks */
 	init_ks();
 	cout<<"memoized - "<<memoized_knapsack(val, wt, W, 3)<<endl;
 
-	cout<<"tabular - "<<tabular_knapsack(val, wt, W, 3)<<endl;
+	/* tabular ks */
+	cout<<"tabular - "<<tabular_knapsack(val, wt, W, 3)<<endl;	
 
+	/* unbounded ks */
+	cout<<"ubounded ks - "<<ub_knapsack()<<endl;
+
+	/* branch_bound_knapsack */
+
+	/* print items in 0-1 knapsack */
+
+	/* print all possible solution */
+
+	/* 0-1 knapsack queries */
+
+	/* knapsack with large weights */
+
+	/* fractional */
 	cout<<"fractional - "<<frac_knapsack()<<endl;
+
+	/* unbounded fractional */
+//	cout<<"unbounded fractional - "<<ubf_knapsack()<<endl;
+	
+	//fractional knapsack queries
+
+	//subset sum
+	//equal sum partition
+	//count of subset sum
+	//mimimum subset sum difference
+	//target sum
+	//No. of subsets in given difference
 
 	cout<<endl;
 
