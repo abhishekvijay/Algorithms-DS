@@ -27,6 +27,7 @@ void init_ks()
 			kst[i][j] = -1;
 	return;
 }
+
 int memoized_knapsack(int *val, int *wt, int w, int sz)
 {
 	if (sz == 0 || w == 0)
@@ -45,7 +46,25 @@ int memoized_knapsack(int *val, int *wt, int w, int sz)
 
 int tabular_knapsack(int *val, int *wt, int w, int sz)
 {
-	return 0;
+	register int i, j;
+	int t[4][51] = {0, };
+
+	for(i=0,j=0; i<4; ++i)
+		t[i][j] = 0;
+	for(j=0,i=0; j<51; ++j)
+		t[i][j] = 0;
+
+	for(i=1; i<4; ++i)
+	{
+		for(j=1; j<51; ++j)
+		{
+			if (wt[i-1] <= w)
+				t[i][j] = MAX(val[i-1] + t[i-1][j-wt[i-1]], t[i-1][j]);
+			else
+				t[i][j] = t[i-1][j];
+		}
+	}
+	return t[sz][w];
 }
 
 void knapsack_01()
