@@ -140,7 +140,23 @@ int ub_knapsack()
 /*================================================================= unbounded fractional KS */
 int ubf_knapsack()
 {
-	return 0;
+	float val[] = { 14, 27, 44, 19 }; 
+    float wt[] = { 6, 7, 9, 8 }; 
+    int n = sizeof(val) / sizeof(val[0]); 
+    int W = 50; 
+
+	float maxratio = INT_MIN; 
+    int maxindex = 0; 
+
+	for (int i = 0; i < n; i++) 
+	{ 
+        if ((val[i] / wt[i]) > maxratio) 
+		{
+            maxratio = (val[i] / wt[i]); 
+            maxindex = i; 
+        } 
+    }		
+	return (W * maxratio);
 }
 
 
@@ -179,7 +195,7 @@ void knapsack_01()
 	cout<<"fractional - "<<frac_knapsack()<<endl;
 
 	/* unbounded fractional */
-//	cout<<"unbounded fractional - "<<ubf_knapsack()<<endl;
+	cout<<"unbounded fractional - "<<ubf_knapsack()<<endl;
 	
 	//fractional knapsack queries
 
