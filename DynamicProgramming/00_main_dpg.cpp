@@ -3,12 +3,15 @@
 
 #include <stdio.h>
 
-extern void ugly_numbers(void);
-extern void fibonacci_num(void);
-extern void catalan_num(void);
-extern void bell_number(void);
-extern void binomial_coeff(void);
+extern void subset_sum(void);
+extern void knapsack_01(void);
+
 extern void permutation_coeff(void);
+extern void binomial_coeff(void);
+extern void bell_number(void);
+extern void catalan_num(void);
+extern void fibonacci_num(void);
+extern void ugly_numbers(void);
 
 int main()
 {
@@ -18,6 +21,8 @@ int main()
 	bell_number();
 	binomial_coeff();
 	permutation_coeff();
+
+	knapsack_01();
 
 	return 0;
 }
