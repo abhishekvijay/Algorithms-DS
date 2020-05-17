@@ -73,49 +73,6 @@ int tabular_knapsack(int *val, int *wt, int w, int sz)
 	return t[sz][w];
 }
 
-/*================================================================= fractional knapsack */
-
-typedef struct ITEM {
-	int val; 
-	int wt;
-}Item;
-
-bool ks_compare(Item a, Item b)
-{
-	double r1 = double(a.val/a.wt);
-	double r2 = double(b.val/b.wt);
-
-	return r1>r2;
-}
-
-int frac_knapsack(void)
-{
-	Item arr[] = {{60,10}, {100,20}, {120,30}};
-	int sz = sizeof(arr)/sizeof(arr[0]);
-	int W = 50;
-
-	sort(arr, arr+sz, ks_compare);
-
-	int currWt=0;
-	double finalVal=0;
-
-	for(int i=0; i<sz; ++i)
-	{
-		if (currWt + arr[i].wt <= W)
-		{
-			currWt += arr[i].wt;
-			finalVal += arr[i].val;
-		}
-		else
-		{
-			int remain = W - currWt;
-			finalVal += arr[i].val*(double(remain)/arr[i].wt);
-			break;
-		}
-	}
-	return (int)finalVal;
-}
-
 /*================================================================= unbounded KS */
 int ub_knapsack()
 {
@@ -137,29 +94,8 @@ int ub_knapsack()
 	return t[W];
 }
 
-/*================================================================= unbounded fractional KS */
-double ubf_knapsack()
-{
-	float val[] = { 14, 27, 44, 19 }; 
-    float wt[] = { 6, 7, 9, 8 }; 
-    int n = sizeof(val) / sizeof(val[0]); 
-    int W = 50; 
-
-	float maxratio = INT_MIN; 
-    int maxindex = 0; 
-
-	for (int i = 0; i < n; i++) 
-	{ 
-        if ((val[i] / wt[i]) > maxratio) 
-		{
-            maxratio = (val[i] / wt[i]); 
-            maxindex = i; 
-        } 
-    }		
-	return (W * maxratio);
-}
-
 /*================================================================= knapsack queries */
+
 int qlup[5][11];
 void qinit()
 {
@@ -230,6 +166,72 @@ void knapsack_queries()
 	{
 		cout<<"query for - "<<q[i]<<" = "<<get_query_result(w,q[i],sz)<<endl;
 	}
+}
+
+/*================================================================= fractional knapsack */
+
+typedef struct ITEM {
+	int val; 
+	int wt;
+}Item;
+
+bool ks_compare(Item a, Item b)
+{
+	double r1 = double(a.val/a.wt);
+	double r2 = double(b.val/b.wt);
+
+	return r1>r2;
+}
+
+int frac_knapsack(void)
+{
+	Item arr[] = {{60,10}, {100,20}, {120,30}};
+	int sz = sizeof(arr)/sizeof(arr[0]);
+	int W = 50;
+
+	sort(arr, arr+sz, ks_compare);
+
+	int currWt=0;
+	double finalVal=0;
+
+	for(int i=0; i<sz; ++i)
+	{
+		if (currWt + arr[i].wt <= W)
+		{
+			currWt += arr[i].wt;
+			finalVal += arr[i].val;
+		}
+		else
+		{
+			int remain = W - currWt;
+			finalVal += arr[i].val*(double(remain)/arr[i].wt);
+			break;
+		}
+	}
+	return (int)finalVal;
+}
+
+/*================================================================= unbounded fractional KS */
+
+double ubf_knapsack()
+{
+	float val[] = { 14, 27, 44, 19 }; 
+    float wt[] = { 6, 7, 9, 8 }; 
+    int n = sizeof(val) / sizeof(val[0]); 
+    int W = 50; 
+
+	float maxratio = INT_MIN; 
+    int maxindex = 0; 
+
+	for (int i = 0; i < n; i++) 
+	{ 
+        if ((val[i] / wt[i]) > maxratio) 
+		{
+            maxratio = (val[i] / wt[i]); 
+            maxindex = i; 
+        } 
+    }		
+	return (W * maxratio);
 }
 
 /*================================================================= main function */
