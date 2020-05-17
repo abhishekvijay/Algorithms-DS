@@ -138,7 +138,7 @@ int ub_knapsack()
 }
 
 /*================================================================= unbounded fractional KS */
-int ubf_knapsack()
+double ubf_knapsack()
 {
 	float val[] = { 14, 27, 44, 19 }; 
     float wt[] = { 6, 7, 9, 8 }; 
@@ -159,6 +159,78 @@ int ubf_knapsack()
 	return (W * maxratio);
 }
 
+/*================================================================= knapsack queries */
+int qlup[5][11];
+void qinit()
+{
+	for(int i=0; i<5; ++i)
+		for(int j=0; j<11; ++j)
+			qlup[i][j] = -1;
+}
+int get_query_result(int *w, int W, int n)
+{
+#if 0 //recursive
+
+	if (n==0 || W==0)
+		return 0;	
+
+	if (w[n-1] <= W)
+		return MAX(w[n-1] + get_query_result(w, W-w[n-1], n-1), get_query_result(w, W, n-1));
+	else
+		return get_query_result(w, W, n-1);
+
+#elseif 0 //memoized
+
+	if (n == 0 || W == 0)
+		return 0;
+
+	if (qlup[n][W] != -1)
+		return qlup[n][W];
+
+	if (w[n-1] <= W)
+		qlup[n][W] = MAX(w[n-1] + get_query_result(w, W-w[n-1], n-1), get_query_result(w, W, n-1));
+	else
+		qlup[n][W] = get_query_result(w, W, n-1);
+
+	return qlup[n][W];
+
+#else //tabular
+
+	int t[4][12] = {0,};
+	int i, j;
+
+	for(i=0,j=0; i<4; ++i)
+		t[i][j] = 0;
+	for(j=0,i=0; j<12; ++j)
+		t[i][j] = 0;
+
+	for(i=1; i<4; ++i)
+	{
+		for(j=1; j<12; ++j)
+		{
+			if (w[i-1] <= W)
+				t[i][j] = MAX(w[i-1] + t[i-1][j-w[i-1]], t[i-1][j]);
+			else
+				t[i][j] = t[i-1][j];
+		}
+	}
+	cout<<endl;
+	return t[n][W];
+#endif
+}
+
+void knapsack_queries()
+{
+	int w[] = {3,8,9};
+	int q[] = {11,10,4};
+	int sz = sizeof(w)/sizeof(w[0]);
+
+	register int i;
+	for(i=0; i<sz; ++i)
+	{
+		cout<<"query for - "<<q[i]<<" = "<<get_query_result(w,q[i],sz)<<endl;
+	}
+}
 
 /*================================================================= main function */
 
@@ -188,6 +260,8 @@ void knapsack_01()
 	/* print all possible solution */
 
 	/* 0-1 knapsack queries */
+	qinit();
+	knapsack_queries();
 
 	/* knapsack with large weights */
 
