@@ -21,6 +21,7 @@ void rev_elements(int *ptr, int st, int en)
 		st++;
 		en--;
 	}
+	return;
 }
 
 void rev_arr(int *ptr, int sz, int d)
