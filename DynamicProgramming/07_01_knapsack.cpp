@@ -234,6 +234,36 @@ double ubf_knapsack()
 	return (W * maxratio);
 }
 
+/*================================================================= subset sum */
+void subset_sum()
+{
+
+}
+
+/*================================================================= equal sum partition */
+void equal_sum_partition()
+{
+
+}
+
+/*================================================================= count of subset sum */
+void count_subset_sum()
+{
+
+}
+
+/*================================================================= mimimum subset sum difference */
+void min_subset_sum_diff()
+{
+
+}
+
+/*================================================================= target sum */
+void target_sum()
+{
+
+}
+
 /*================================================================= main function */
 
 void knapsack_01()
@@ -275,11 +305,21 @@ void knapsack_01()
 	
 	//fractional knapsack queries
 
-	//subset sum
-	//equal sum partition
-	//count of subset sum
-	//mimimum subset sum difference
-	//target sum
+	/* subset sum */
+	subset_sum();
+
+	/* equal sum partition */
+	equal_sum_partition();
+
+	/* count of subset sum */
+	count_subset_sum();
+
+	/* mimimum subset sum difference */
+	min_subset_sum_diff();
+
+	/* target sum */
+	target_sum();
+
 	//No. of subsets in given difference
 
 	cout<<endl;
