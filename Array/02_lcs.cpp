@@ -6,7 +6,7 @@ using namespace std;
 
 #define MAX(a,b)		(a>b)?a:b;
 
-
+/* conditions - (i < j); (j % i = 0); (arr[i] < arr[j]) */
 void lcs_with_conditions()
 {
 	int arr[6] = {1,2,3,7,9,10};
