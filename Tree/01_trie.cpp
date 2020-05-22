@@ -8,17 +8,17 @@ using namespace std;
 
 #define MAX			26
 
-typedef struct NODE {
+typedef struct T_NODE {
 	int isLeaf;
 	char ch;
-	NODE *child[MAX];
-} Node;
+	T_NODE *child[MAX];
+} TNode;
 
-Node *getNode()
+TNode *getNode()
 {
-	Node *temp = NULL;
+	TNode *temp = NULL;
 
-	temp = (Node *)malloc(sizeof(Node));
+	temp = (TNode *)malloc(sizeof(TNode));
 	if (temp != 0) {
 		temp->isLeaf = 0;
 		temp->ch = '0';
@@ -29,7 +29,7 @@ Node *getNode()
 	return temp;
 }
 
-int haveChild(Node *head)
+int haveChild(TNode *head)
 {
 	if(head == NULL)
 		return 0;
@@ -44,28 +44,30 @@ int haveChild(Node *head)
 	return child;
 }
 
-int insert_trie(Node *hd, char *str)
+void insert_trie(TNode *hd, char *str)
 {
 	if (hd == NULL || str == NULL)
-		return 0;
+		return;
 
-	Node *trie = hd;
+	TNode *trie = hd;
+	int indx = 0;
 
 	while(*str != '\0')
 	{
-		if (trie->child[*str-'a'] == NULL) {
-			trie->child[*str-'a'] = getNode();
-			trie->ch = *str;
+		indx = *str - 'a';
+		if (trie->child[indx] == NULL) {
+			trie->child[indx] = getNode();
+			trie->child[indx]->ch = *str;			
 		}
 
-		trie = trie->child[*str-'a'];
+		trie = trie->child[indx];
 		str++;
 	}
 	trie->isLeaf = 1;
-	return 1;
+	return;
 }
 
-int search_trie(Node *hd, char *str)
+int search_trie(TNode *hd, char *str)
 {
 	if (hd == NULL || str == NULL)
 		return 0;
@@ -73,7 +75,7 @@ int search_trie(Node *hd, char *str)
 	if(!haveChild(hd))
 		return 0;
 
-	Node *trie = hd;
+	TNode *trie = hd;
 
 	while(*str != '\0')
 	{
@@ -87,46 +89,44 @@ int search_trie(Node *hd, char *str)
 	return trie->isLeaf;
 }
 
-int delete_trie(Node *hd, char*str)
+int delete_trie(TNode **hd, char*str)
 {
-	if (hd == NULL || str == NULL)
+	if (*hd == NULL || str == NULL)
 		return 0;
-	
-	Node *trie = hd;
 
-	if (*str != '\0')
+	int indx = *str-'a';
+
+	if (*str)
 	{
-		if ((trie->child[*str-'a'] != NULL) && 
-			 delete_trie(trie->child[*str-'a'], str+1) && 
-			 (trie->isLeaf == 0))
+		if((*hd)->child[indx] != NULL)
 		{
-			if (!haveChild(trie))
+			delete_trie(&((*hd)->child[indx]), str+1);
+		
+			if (!haveChild(*hd) && ((*hd)->isLeaf == 0))
 			{
-				printf("%c \n", trie->ch);
-				free(trie);
-				trie = NULL;
-				return 1;
+				cout << " " <<(*hd)->ch<<endl;
+				free(*hd);
+				*hd = NULL;
+				return 1;	
 			}
 			else
 				return 0;
-		}
+		}		
 	}
-
-	if (*str == '\0' && trie->isLeaf)
+	
+	if (*str == '\0' && (*hd)->isLeaf)
 	{
-		if (!haveChild(trie))
+		if (!haveChild(*hd))
 		{
-			printf("%c \n", trie->ch);
-			free(trie);
-			trie = NULL;
+			cout << " " <<(*hd)->ch<<endl;
+			free(*hd);
+ 			*hd = NULL;				
 			return 1;
-		}
-		else
-		{
-			trie->isLeaf = 0;
+		} else {
+			(*hd)->isLeaf = 0;
 			return 0;
 		}
-	}
+	}	
 
 	return 0;
 }
@@ -138,7 +138,7 @@ void basic_trie()
 	char *str3 = "hell";
 	char *str4 = "h";
 
-	Node *trie = getNode();
+	TNode *trie = getNode();
 
 	insert_trie(trie, str1);
 	insert_trie(trie, str2);
@@ -156,10 +156,28 @@ void basic_trie()
 
 	cout<<endl;
 
-	cout<<"delete - hello - "<<delete_trie(trie, str1)<<endl;
-	cout<<"delete - helloworld - "<<delete_trie(trie, str2)<<endl;
-	cout<<"delete - hell - "<<delete_trie(trie, str3)<<endl;
-	cout<<"delete - h - "<<delete_trie(trie, str4)<<endl;
+	cout<<"delete - hello - "<<delete_trie(&trie, str1)<<endl;
+		cout<<"search - hello - "<<search_trie(trie, str1)<<endl;
+		cout<<"search - helloworld - "<<search_trie(trie, str2)<<endl;
+		cout<<"search - hell - "<<search_trie(trie, str3)<<endl;
+		cout<<"search - h - "<<search_trie(trie, str4)<<endl;
+
+	cout<<endl;
+	
+	cout<<"delete - helloworld - "<<delete_trie(&trie, str2)<<endl;
+		cout<<"search - hello - "<<search_trie(trie, str1)<<endl;
+		cout<<"search - helloworld - "<<search_trie(trie, str2)<<endl;
+		cout<<"search - hell - "<<search_trie(trie, str3)<<endl;
+		cout<<"search - h - "<<search_trie(trie, str4)<<endl;
+
+	cout<<endl;
+
+	cout<<"delete - hell - "<<delete_trie(&trie, str3)<<endl;
+		cout<<"search - h - "<<search_trie(trie, str4)<<endl;
+
+	cout<<endl;
+
+	cout<<"delete - h - "<<delete_trie(&trie, str4)<<endl;
 
 	cout<<endl;
 
@@ -170,9 +188,9 @@ void basic_trie()
 
 	cout<<endl;
 	
-	cout<<"delete - hel - "<<delete_trie(trie, "hel")<<endl;
-	cout<<"delete - heli - "<<delete_trie(trie, "heli")<<endl;
-	cout<<"delete - hellowhile - "<<delete_trie(trie, "hellowhile")<<endl;
+	cout<<"delete - hel - "<<delete_trie(&trie, "hel")<<endl;
+	cout<<"delete - heli - "<<delete_trie(&trie, "heli")<<endl;
+	cout<<"delete - hellowhile - "<<delete_trie(&trie, "hellowhile")<<endl;
 
 	return;
 }
