@@ -26,9 +26,119 @@ void csort(int *ptr, int sz)
 	return;
 }
 
-/*
- *  Custom Version - using stride
- */
+void matrix_search()
+{
+
+}
+void search_bitonic_array()
+{
+
+}
+
+void max_element_bitonic_array()
+{
+
+}
+
+void binary_search_on_answer()
+{
+
+}
+
+void minimum_diff_elmnt()
+{
+
+}
+
+void index_of_first_1_binary_array()
+{
+
+}
+
+void poistion_in_infinite_sorted_array()
+{
+
+}
+
+void next_letter_problem()
+{
+
+}
+
+void ciel_element()
+{
+
+}
+
+void floor_element()
+{
+
+}
+
+void searching_nearly_sorted_array()
+{
+
+}
+
+void find_element_sorted_rotated_array()
+{
+
+}
+
+void rotation_sorted_array()
+{
+
+}
+
+void element_count()
+{
+
+}
+
+void occurences_of_element()
+{
+
+}
+
+void order_agnostic_bs()
+{
+
+}
+
+void ascending_bs()
+{
+
+}
+
+void descending_bs()
+{
+	int arr[8] = {100,90,80,70,60,50,40,30};
+	int item = 10;
+
+	int st = 0;
+	int en = 7;
+	int mid = 0;
+
+	while(st <= en)
+	{
+		mid = (st+en)/2;
+
+		if (arr[mid] == item)
+			break;
+		else if (arr[mid] < item)
+			en = mid-1;
+		else if (arr[mid] > item)
+			st = mid+1;
+	}
+
+	if (arr[mid] == item)
+		printf("item found at indx - %d\n", mid);
+	else
+		printf("item not found\n");
+
+	return;
+}
+
 int binary_stride(int a[], int sz, int item) 
 {
     int stride = 0, pos = 0, temp = 0;
@@ -88,10 +198,6 @@ void custom_binary_srch()
 	return;
 }
 
-
-/*
- *  Iterative Version
- */
 void find_occurences_bs()
 {
 	int arr[20] = {1,1,1,1,4,4,4,4,4,4,4,7,7,7,7,7,9,9,9,9};
@@ -192,7 +298,7 @@ int iter_bs(int *ptr, int item, int sz)
 			return mid;
 		else if (item < ptr[mid])
 			hi = mid - 1;
-		else
+		else if (item > ptr[mid])
 			lo = mid + 1;
 	}
 
@@ -215,9 +321,6 @@ void iter_binary_srch()
 	return;
 }
 
-/*
- *  Recursive Version
- */
 int recur_bs(int *ptr, int item, int lb, int ub)
 {
 	int mid = 0;
