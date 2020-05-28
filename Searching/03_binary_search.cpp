@@ -92,7 +92,46 @@ void rotation_sorted_array()
 
 void element_count()
 {
+	int arr[10] = {80,80,80,80,80,80,80,80,80,70};
+	int item = 80; //70
 
+	int st = 0, en = 9, mid = 0, first = 0, last = 0;
+
+	while(st <= en)
+	{
+		mid = st + (en-st)/2;
+
+		if (arr[mid] == item)
+		{
+			first = mid;
+			en = mid - 1;
+		}
+		else if (arr[mid] > item)
+			st = mid + 1;
+		else if (arr[mid] < item)
+			en = mid - 1;
+	}
+
+	st = mid = 0; en = 9;
+
+	while (st <= en)
+	{
+		mid = st + (en-st)/2;
+
+		if (arr[mid] == item)
+		{
+			last = mid;
+			st = mid + 1;
+		}
+		else if (arr[mid] > item)
+			st = mid + 1;
+		else if (arr[mid] < item)
+			en = mid - 1;
+	}
+
+	printf("element occurences are - %d\n", last-first+1);
+
+	return;
 }
 
 void occurences_of_element()
