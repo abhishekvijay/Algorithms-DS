@@ -97,7 +97,46 @@ void element_count()
 
 void occurences_of_element()
 {
+	int arr[10] = {80,70,70,70,70,70,70,40,30,20};
+	int item = 70;
 
+	int st = 0, en = 9, mid = 0, first = 0, last = 0;
+
+	while(st <= en)
+	{
+		mid = st + (en-st)/2;
+
+		if (arr[mid] == item)
+		{
+			first = mid;
+			en = mid-1;
+		}
+		else if(arr[mid] > item)
+			st = mid + 1;
+		else if(arr[mid] < item)
+			en = mid - 1;
+	}
+
+	st = 0; en = 9; mid = 0;
+
+	while(st <= en)
+	{
+		mid = st + (en-st)/2;
+
+		if (arr[mid] == item)
+		{
+			last = mid;
+			st = mid+1;
+		}
+		else if(arr[mid] > item)
+			st = mid+1;
+		else if (arr[mid] < item)
+			en = mid-1;
+	}
+
+	printf("occurrences - first [%d], last [%d]\n", first, last);
+
+	return;
 }
 
 void order_agnostic_bs()
