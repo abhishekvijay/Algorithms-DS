@@ -107,7 +107,29 @@ void order_agnostic_bs()
 
 void ascending_bs()
 {
+	int arr[8] = {10,20,30,40,50,60,70,80};
+	int item = 80;
 
+	int st = 0, en = 7, mid = 0;
+
+	while(st <= en)
+	{
+		mid = st + (en-st)/2;
+
+		if (arr[mid] == item)
+			break;
+		else if (arr[mid] < item)
+			st = mid + 1;
+		else if (arr[mid] > item)
+			en = mid - 1;
+	}
+
+	if (arr[mid] == item)
+		printf("item found at indx - %d\n", mid);
+	else
+		printf("item not found\n");
+
+	return;
 }
 
 void descending_bs()
