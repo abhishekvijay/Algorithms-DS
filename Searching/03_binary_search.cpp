@@ -102,7 +102,60 @@ void occurences_of_element()
 
 void order_agnostic_bs()
 {
+	//here we do not know how array is sorted
+	//so we will first identify the array order - ascending/descending
+	//and then will apply the binary search.
+	// order = 0 (ascending), order = 1 (descending)
 
+	int arr[10] = {10,9,8,7,6,5,4,3,2,1};
+	int brr[10] = {1,2,3,4,5,6,7,8,9,10};
+	int item = 9;
+
+	int st = 0, en = 9, mid = 0, order = -1;
+
+	int *ptr = brr; //arr;
+
+	(*(ptr+0) < *(ptr+1)) ? (order = 0) : (order = 1);
+
+	if (order == 0) //asecnding
+	{
+		while(st <= en)
+		{
+			mid = st + (en-st)/2;
+
+			if (*(ptr+mid) == item)
+				break;
+			else if (*(ptr+mid) < item)
+				st = mid+1;
+			else if (*(ptr+mid) > item)
+				en = mid-1;
+		}
+	}
+	else if (order == 1) //descending
+	{
+		while(st <= en)
+		{
+			mid = st + (en-st)/2;
+
+			if (*(ptr+mid) == item)
+				break;
+			else if (*(ptr+mid) < item)
+				en = mid-1;
+			else if (*(ptr+mid) > item)
+				st = mid+1;
+		}
+	}
+	else
+	{
+		printf("invalid search \n");
+	}
+
+	if (*(ptr+mid) == item)
+		printf("item found at indx - %d\n", mid);
+	else
+		printf("item not found");
+
+	return;
 }
 
 void ascending_bs()
