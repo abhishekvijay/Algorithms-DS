@@ -87,6 +87,8 @@ void find_element_sorted_rotated_array()
 
 void rotation_sorted_array()
 {
+	int arr[8] = {2,5,6,8,11,12,15,18};
+	int brr[8] = {11,12,15,18,2,5,6,8};
 
 }
 

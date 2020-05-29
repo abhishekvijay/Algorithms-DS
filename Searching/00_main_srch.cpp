@@ -75,7 +75,7 @@ int main()
 	occurences_of_element();
 	order_agnostic_bs();
 	ascending_bs();
-	descending_bs();
+//	descending_bs();
 	
 /*	custom_binary_srch();
 	find_occurences_bs();
