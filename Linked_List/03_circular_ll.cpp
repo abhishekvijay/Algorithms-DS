@@ -15,6 +15,7 @@ typedef struct CLIST
 {
 	int count;
 	Node *list;
+	Node *end;
 }Clist;
 
 Clist head;
@@ -23,6 +24,7 @@ void init()
 {
 	head.count = 0;
 	head.list = NULL;
+	head.end = NULL;
 }
 
 Node *getNode(int item)
@@ -49,14 +51,16 @@ void insert_list(int item)
 	}
 	else
 	{
-		Node *head = list;	
+		Node *hd = list;	
 
-		while(list->next != head)
+		while(list->next != hd)
 			list = list->next;
 
 		Node *newNode = getNode(item);
-		newNode->next = head;
-		list->next = newNode;
+		newNode->next = hd;
+		list->next = newNode;		
+
+		head.end = newNode;
 	}
 	return;
 }
@@ -130,9 +134,9 @@ void circular_linked_list()
 	/* split list */
 	split_list(MAX);
 
-	/* */
-	/* */
-	/* */
+	/* binary tree to circular list */
+	/* josephus problem */
+	/* deque implementation */
 
 	return;
 }
