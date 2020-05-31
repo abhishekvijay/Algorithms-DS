@@ -162,23 +162,23 @@ void basic_trie()
 	cout<<endl;
 
 	cout<<"delete - hello - "<<delete_trie(&trie, str1)<<endl;
-		cout<<"search - hello - "<<search_trie(trie, str1)<<endl;
-		cout<<"search - helloworld - "<<search_trie(trie, str2)<<endl;
-		cout<<"search - hell - "<<search_trie(trie, str3)<<endl;
-		cout<<"search - h - "<<search_trie(trie, str4)<<endl;
+	cout<<"search - hello - "<<search_trie(trie, str1)<<endl;
+	cout<<"search - helloworld - "<<search_trie(trie, str2)<<endl;
+	cout<<"search - hell - "<<search_trie(trie, str3)<<endl;
+	cout<<"search - h - "<<search_trie(trie, str4)<<endl;
 
 	cout<<endl;
 	
 	cout<<"delete - helloworld - "<<delete_trie(&trie, str2)<<endl;
-		cout<<"search - hello - "<<search_trie(trie, str1)<<endl;
-		cout<<"search - helloworld - "<<search_trie(trie, str2)<<endl;
-		cout<<"search - hell - "<<search_trie(trie, str3)<<endl;
-		cout<<"search - h - "<<search_trie(trie, str4)<<endl;
+	cout<<"search - hello - "<<search_trie(trie, str1)<<endl;
+	cout<<"search - helloworld - "<<search_trie(trie, str2)<<endl;
+	cout<<"search - hell - "<<search_trie(trie, str3)<<endl;
+	cout<<"search - h - "<<search_trie(trie, str4)<<endl;
 
 	cout<<endl;
 
 	cout<<"delete - hell - "<<delete_trie(&trie, str3)<<endl;
-		cout<<"search - h - "<<search_trie(trie, str4)<<endl;
+	cout<<"search - h - "<<search_trie(trie, str4)<<endl;
 
 	cout<<endl;
 
