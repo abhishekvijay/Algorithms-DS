@@ -224,21 +224,21 @@ int frac_knapsack(void)
 double ubf_knapsack()
 {
 	float val[] = { 14, 27, 44, 19 }; 
-    float wt[] = { 6, 7, 9, 8 }; 
-    int n = sizeof(val) / sizeof(val[0]); 
-    int W = 50; 
+    	float wt[] = { 6, 7, 9, 8 }; 
+    	int n = sizeof(val) / sizeof(val[0]); 
+    	int W = 50; 
 
 	float maxratio = INT_MIN; 
-    int maxindex = 0; 
+    	int maxindex = 0; 
 
 	for (int i = 0; i < n; i++) 
 	{ 
-        if ((val[i] / wt[i]) > maxratio) 
+        	if ((val[i] / wt[i]) > maxratio) 
 		{
-            maxratio = (val[i] / wt[i]); 
-            maxindex = i; 
-        } 
-    }		
+            		maxratio = (val[i] / wt[i]); 
+            		maxindex = i; 
+        	} 
+    	}		
 	return (W * maxratio);
 }
 
