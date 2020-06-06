@@ -10,6 +10,8 @@ using namespace std;
 
 int rec_knapsack(int *val, int *wt, int w, int sz)
 {
+	if (!val || !wt)
+		return 0;
 	if (sz == 0 || w == 0)
 		return 0;	
 
@@ -34,6 +36,8 @@ void init_ks()
 
 int memoized_knapsack(int *val, int *wt, int w, int sz)
 {
+	if (!val || !wt)
+		return 0;
 	if (sz == 0 || w == 0)
 		return 0;
 
@@ -52,6 +56,8 @@ int memoized_knapsack(int *val, int *wt, int w, int sz)
 
 int tabular_knapsack(int *val, int *wt, int w, int sz)
 {
+	if (!val || !wt)
+		return 0;
 	register int i, j;
 	int t[4][51] = {0, };
 
@@ -105,6 +111,8 @@ void qinit()
 }
 int get_query_result(int *w, int W, int n)
 {
+	if (!w)
+		return 0;
 #if 0 //recursive
 
 	if (n==0 || W==0)
