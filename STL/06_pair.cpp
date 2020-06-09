@@ -56,6 +56,8 @@ namespace std {
 }
 */
 
+//Usability of pair - maps, multimaps, unordered maps, unordered multimaps
+
 typedef std::pair<int, double> paer;
 
 class Foo {
