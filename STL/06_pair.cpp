@@ -6,9 +6,52 @@
 /*
 namespace std {
 	template<typename T1, typename T2>
-	struct pair {
-		T1 first;
-		T2 second;
+	struct pair 
+	{
+		public:
+			T1 first;
+			T2 second;
+		
+		//constructors
+		pair(const T1& x, const T2& y);
+		template<typename U, typename V> pair(U&& x, V&& y);
+		template <typename... Args1, typename... Args2>
+		pair(piecewise_construct_t, tuple<Args1...> first_args, tuple<Args2...> second_args);
+
+		//print values
+		template<typename T1, typename T2>
+		std::ostream& operator << (std::ostream& strm, const std::pair<T1,T2>& p)
+		{
+			return strm << "[" << p.first << "," << p.second << "]";
+		}
+
+		// create value pair only by providing the values - reference semantics
+		template <template T1, template T2> 
+		pair<T1,T2> make_pair (const T1& x, const T2& y) 
+		{
+			return pair<T1,T2>(x,y);
+		}
+
+		// create value pair only by providing the values - move semantics
+		template <template T1, template T2>
+		pair<V1,V2> make_pair (T1&& x, T2&& y);
+
+		template <typename T1, typename T2>
+		bool operator== (const pair<T1,T2>& x, const pair<T1,T2>& y) 
+		{
+			return x.first == y.first && x.second == y.second;
+		}
+
+		//In a comparison of pairs, the first value has higher priority. 
+		//Thus, if the first values of two pairs differ, the result of their 
+		//comparison is used as the result of the overall comparison of the pairs. 
+		//If the members first are equal, the comparison of the members second yields the overall result
+
+		template <typename T1, typename T2>
+		bool operator< (const pair<T1,T2>& x, const pair<T1,T2>& y) 
+		{
+			return x.first < y.first || (!(y.first < x.first) && x.second < y.second);
+		}
 	};
 }
 */
