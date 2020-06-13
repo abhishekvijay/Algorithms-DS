@@ -23,7 +23,6 @@ void finit(void)
 }
 int memoized_fnum(int n)
 {
-
 	if (lookup[n] == -1)
 	{
 		if (n <= 1)
