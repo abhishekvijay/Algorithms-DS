@@ -133,7 +133,7 @@ void check_pair(void)
 
 	//extraccting values from pair
 	paer p12(10, 99.99);
-	int a; float b;
+	int a; double b;
 	std::make_pair(std::ref(a), std::ref(b)) = p12;
 	std::cout<< "[a,b] = "<<"["<<a<<","<<b<<"]"<<std::endl;
 
