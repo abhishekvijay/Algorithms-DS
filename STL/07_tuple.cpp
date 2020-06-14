@@ -56,6 +56,22 @@ void check_tuple()
 	std::tie(std::ignore, f, std::ignore) = t9;
 	std::cout<<"ignore 2 - "<<f<<std::endl;
 
+	//initializer list -- currently not working
+	//std::vector<std::pair<int, double>> v1 {{10,11.22}, {20,21.42}};
+
+	//tuple size
+	typedef std::tuple<int, int, int, double> t10;
+	std::cout<<"size - "<<std::tuple_size<t10>::value<<std::endl;
+
+	//tuple type - dont know why syntax error on this ?
+	//std::cout<<"type - "<<std::tuple_element<3,t10>::type<<std::endl;
+
+	//tuple concatenate
+	auto tc = std::tuple_cat(std::make_tuple(10, "hello"), \
+							 std::make_tuple(20, "world"));
+	std::cout<<"["<<std::get<0>(tc)<<","<<std::get<1>(tc)<<"]" \
+		<<","<<"["<<std::get<2>(tc)<<","<<std::get<3>(tc)<<"]"<<std::endl;
+	
 	std::cout<<std::endl;
 
 	return;
