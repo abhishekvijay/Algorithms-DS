@@ -1,10 +1,60 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
+#include <utility>
 #include <tuple>
 
 void check_tuple()
 {
+	//tuple initialization
+	std::tuple<int, int, std::string> t1;  //default init to 0;
+	std::tuple<int, int, std::string> t2(10, 20, "hello"); //initialized tuple
+
+	//tuple prints
+	std::cout<<"["<<std::get<0>(t2)<<","<<std::get<1>(t2)<<","<<std::get<2>(t2)<<"]"<<std::endl;
+
+	//pair assignment
+	std::pair<int, std::string> p(100, "world");
+	auto t3 = p;
+	auto t4(p);
+	std::cout<<"["<<std::get<0>(t3)<<","<<std::get<1>(t3)<<"]"<<std::endl;
+	std::cout<<"["<<std::get<0>(t4)<<","<<std::get<1>(t4)<<"]"<<std::endl;
+
+	//copy constructor
+	auto t5 = t2;
+	std::cout<<"["<<std::get<0>(t5)<<","<<std::get<1>(t5)<<","<<std::get<2>(t5)<<"]"<<std::endl;
+
+	//==, !=, <, >, <=, >=
+
+	//tuple swap
+	std::tuple<int, int, std::string> t7;
+	t7.swap(t5);
+	std::cout<<"["<<std::get<0>(t7)<<","<<std::get<1>(t7)<<","<<std::get<2>(t7)<<"]"<<std::endl;
+
+	std::tuple<int, int, std::string> t8;
+	std::swap(t7, t8);
+	std::cout<<"["<<std::get<0>(t8)<<","<<std::get<1>(t8)<<","<<std::get<2>(t8)<<"]"<<std::endl;
+
+	//make_tuple & tie
+	std::tuple<int, int, std::string> t9(10,20,"name");
+
+	int a,b; std::string s;
+	std::make_tuple(std::ref(a), std::ref(b), std::ref(s)) = t9;
+	std::cout<<"t9 = ["<<a<<","<<b<<","<<s<<"]"<<std::endl;
+
+	int c, d; std::string s1;
+	std::tie(c,d,s1) = t9;
+	std::cout<<"t9 = ["<<c<<","<<d<<","<<s1<<"]"<<std::endl;
+
+	//std::ignore
+	int e; std::string s2;
+	std::tie(e, std::ignore, s2) = t9;
+	std::cout<<"ignore - ["<<e<<","<<s2<<"]"<<std::endl;
+
+	int f;
+	std::tie(std::ignore, f, std::ignore) = t9;
+	std::cout<<"ignore 2 - "<<f<<std::endl;
 
 	std::cout<<std::endl;
 
