@@ -2,6 +2,7 @@
 #include <iostream>
 #include <utility>
 #include <tuple>
+#include <vector>
 
 /*
 namespace std {
@@ -129,6 +130,17 @@ void check_pair(void)
 	std::pair<int, int> p11(10, 20);
 	std::get<0>(p11) = std::get<1>(p11);
 	std::cout<<"["<<std::get<0>(p11)<<","<<std::get<0>(p11)<<"]"<<std::endl;
+
+	//extraccting values from pair
+	paer p12(10, 99.99);
+	int a; float b;
+	std::make_pair(std::ref(a), std::ref(b)) = p12;
+	std::cout<< "[a,b] = "<<"["<<a<<","<<b<<"]"<<std::endl;
+
+	//std::ignore
+	int c;
+	std::make_pair(std::ref(c), std::ignore) = p12;
+	std::cout<< "[c] = "<<"["<<c<<"]"<<std::endl;
 
 	std::cout<<std::endl;
 
