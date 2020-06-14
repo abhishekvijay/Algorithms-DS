@@ -37,6 +37,9 @@ void check_tuple()
 	std::cout<<"["<<std::get<0>(t8)<<","<<std::get<1>(t8)<<","<<std::get<2>(t8)<<"]"<<std::endl;
 
 	//make_tuple & tie
+	auto tpl = std::make_tuple(10, 20, 30, 99.88);
+	std::cout<<"["<<std::get<0>(tpl)<<","<<std::get<1>(tpl)<<","<<std::get<2>(tpl)<<","<<std::get<3>(tpl)<<"]"<<std::endl;
+
 	std::tuple<int, int, std::string> t9(10,20,"name");
 
 	int a,b; std::string s;
@@ -71,6 +74,9 @@ void check_tuple()
 							 std::make_tuple(20, "world"));
 	std::cout<<"["<<std::get<0>(tc)<<","<<std::get<1>(tc)<<"]" \
 		<<","<<"["<<std::get<2>(tc)<<","<<std::get<3>(tc)<<"]"<<std::endl;
+
+	//tuple I/O
+
 	
 	std::cout<<std::endl;
 
