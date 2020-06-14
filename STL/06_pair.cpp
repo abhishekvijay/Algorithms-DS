@@ -102,6 +102,8 @@ void check_pair(void)
 	//piecewise-construct
 	std::tuple<int, double> t(20, 40.60);
 	std::pair<int, Foo> p6(32, t);
+	//this constructor uses the tuples to pass their elements to the constructors of first and second.
+	//instead of taking tuple as a whole, the piecewise_construct allows to use tuple elements
 	std::pair<int, Foo> p7(std::piecewise_construct, std::make_tuple(64), t);
 
 	//make pair
@@ -112,7 +114,7 @@ void check_pair(void)
 
 	// ref-semantics on make_pair
 	int i = 2;
-	auto p9 = std::make_pair(std::ref(i), std::ref(i));
+	auto p9 = std::make_pair(std::ref(i), std::ref(i)); //same reference is passed
 	p9.first += 1;
 	p9.second += 1;
 	std::cout<<"value of i = "<<i<<std::endl;
@@ -120,8 +122,13 @@ void check_pair(void)
 	//move-semantics on make_pair
 	std::string s1("abc");
 	std::string s2("xyz");
-	auto p10 = std::make_pair(std::move(s1), std::move(s2));
+	auto p10 = std::make_pair(std::move(s1), std::move(s2)); //s1 & s2 are no longer used
 	//std::cout<<"["<<p10.first<<","<<p10.second<<"]"<<std::endl;
+
+	//assignment
+	std::pair<int, int> p11(10, 20);
+	std::get<0>(p11) = std::get<1>(p11);
+	std::cout<<"["<<std::get<0>(p11)<<","<<std::get<0>(p11)<<"]"<<std::endl;
 
 	std::cout<<std::endl;
 
