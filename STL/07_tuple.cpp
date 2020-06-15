@@ -76,7 +76,6 @@ void check_tuple()
 		<<","<<"["<<std::get<2>(tc)<<","<<std::get<3>(tc)<<"]"<<std::endl;
 
 	//tuple I/O
-
 	
 	std::cout<<std::endl;
 
