@@ -20,22 +20,22 @@ void check_smart_pointers(void)
 
 	//deleting policy
 	std::shared_ptr<std::string> ptrN(new std::string("Titan"), 
-										[](std::string *p) {
-											std::cout<<"delete -"<<*p<<std::endl;
-											delete p;
-										});
+							[](std::string *p) {
+							std::cout<<"delete -"<<*p<<std::endl;
+							delete p;
+							});
 
 	std::shared_ptr<std::string> ptrP(new std::string[10],
-										[](std::string *p) {
-											std::cout<<"deleting -"<<*p<<std::endl;
-											delete[] p;
-										});
+					[](std::string *p) {
+					std::cout<<"deleting -"<<*p<<std::endl;
+					delete[] p;
+					});
 
 	std::shared_ptr<int> ptrNum(new int[10],
-									[](int *p) {
-										std::cout<<"deleting"<<std::endl;
-										delete[] p;
-									});
+				[](int *p) {
+				std::cout<<"deleting"<<std::endl;
+				delete[] p;
+				});
 
 	std::shared_ptr<int> ptrNum2(new int[10], std::default_delete<int []>());
 
