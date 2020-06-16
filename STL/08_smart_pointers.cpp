@@ -4,6 +4,18 @@
 #include <vector>
 #include <string>
 #include <memory>
+#include <fstream>
+
+class DeleteFile {
+private:
+	std::string fname;
+public:
+	DeleteFile(const std::string &fn):fname(fn) { }
+	void operator ()(std::ofstream *fp) {
+		fp->close();
+		std::remove(fname.c_str());
+	}
+};
 
 void check_smart_pointers(void)
 {
@@ -50,6 +62,16 @@ void check_smart_pointers(void)
 								});	
 	//alternative way
 	std::shared_ptr<int> ptrNum2(new int[10], std::default_delete<int []>());
+
+	//extending deleting policy to other actions
+	std::shared_ptr<std::ofstream> fp(new std::ofstream("tmp.txt"), 
+										DeleteFile("tmp.txt"));
+
+//pointer arithmetic
+	std::shared_ptr<int> pSp(new int(10));
+	std::cout<<"val1 - "<<*pSp<<std::endl;
+	pSp.get()[0] = 20; pSp.get()[0] += 100;
+	std::cout<<"val2 - "<<*pSp<<std::endl;
 
 	std::cout<<std::endl;
 
