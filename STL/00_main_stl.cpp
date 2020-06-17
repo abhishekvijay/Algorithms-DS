@@ -36,8 +36,8 @@ int main()
 */
 
 	/* stl utilities */
-//	check_pair();
-//	check_tuple();
+	check_pair();
+	check_tuple();
 	check_smart_pointers();
 
 	/* container adaptors */
