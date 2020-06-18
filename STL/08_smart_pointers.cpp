@@ -42,6 +42,7 @@ void check_smart_pointers(void)
 	vec.clear();	
 
 //deleting policy 
+	try {
 	//by default delete is called if no policy defined
 	std::shared_ptr<std::string> ptrN(new std::string("Titan"), 
 										[](std::string *p) {
@@ -66,6 +67,11 @@ void check_smart_pointers(void)
 	//extending deleting policy to other actions
 	std::shared_ptr<std::ofstream> fp(new std::ofstream("tmp.txt"), 
 										DeleteFile("tmp.txt"));
+	} 
+	catch (const std::exception &e) 
+	{
+		std::cerr << "exception - " <<e.what()<<std::endl;
+	}
 
 //pointer arithmetic
 	std::shared_ptr<int> pSp(new int(10));
@@ -75,5 +81,6 @@ void check_smart_pointers(void)
 
 	std::cout<<std::endl;
 
+	
 	return;
 }
