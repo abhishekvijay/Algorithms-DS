@@ -43,30 +43,30 @@ void check_smart_pointers(void)
 
 //deleting policy 
 	try {
-	//by default delete is called if no policy defined
-	std::shared_ptr<std::string> ptrN(new std::string("Titan"), 
-										[](std::string *p) {
-										std::cout<<"delete -"<<*p<<std::endl;
-										delete p;
-									});
-	//case of array allocation of string
-	std::shared_ptr<std::string> ptrP(new std::string[10],
-										[](std::string *p) {
-										std::cout<<"deleting array - string"<<*p<<std::endl;
-										delete[] p;
-									});
-	//case of array allocation of int's
-	std::shared_ptr<int> ptrNum(new int[10],
-								[](int *p) {
-								std::cout<<"deleting array - int"<<std::endl;
-								delete[] p;
-								});	
-	//alternative way
-	std::shared_ptr<int> ptrNum2(new int[10], std::default_delete<int []>());
+		//by default delete is called if no policy defined
+		std::shared_ptr<std::string> ptrN(new std::string("Titan"), 
+											[](std::string *p) {
+											std::cout<<"delete -"<<*p<<std::endl;
+											delete p;
+										});
+		//case of array allocation of string
+		std::shared_ptr<std::string> ptrP(new std::string[10],
+											[](std::string *p) {
+											std::cout<<"deleting array - string"<<*p<<std::endl;
+											delete[] p;
+										});
+		//case of array allocation of int's
+		std::shared_ptr<int> ptrNum(new int[10],
+									[](int *p) {
+									std::cout<<"deleting array - int"<<std::endl;
+									delete[] p;
+									});	
+		//alternative way
+		std::shared_ptr<int> ptrNum2(new int[10], std::default_delete<int []>());
 
-	//extending deleting policy to other actions
-	std::shared_ptr<std::ofstream> fp(new std::ofstream("tmp.txt"), 
-										DeleteFile("tmp.txt"));
+		//extending deleting policy to other actions
+		std::shared_ptr<std::ofstream> fp(new std::ofstream("tmp.txt"), 
+											DeleteFile("tmp.txt"));
 	} 
 	catch (const std::exception &e) 
 	{
