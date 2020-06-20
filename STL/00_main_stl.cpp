@@ -9,8 +9,8 @@ extern void check_iterator(void);
 //sequence containers
 extern void check_vector(void);
 extern void check_list(void);
-extern void check_dequeue(void);
-extern void check_arrays(void);
+extern void check_deque(void);
+extern void check_array(void);
 extern void check_forward_list(void);
 extern void check_pair(void);
 extern void check_tuple(void);
@@ -28,17 +28,17 @@ int main()
 //	check_iterator();
 
 	/* sequence containers */
-/*	check_vector();
-	check_list();
-	check_dequeue();
-	check_arrays();
-	check_forward_list();	
-*/
+	check_vector();
+//	check_deque();
+//	check_array();
+//	check_list();	
+//	check_forward_list();	
+
 
 	/* stl utilities */
 //	check_pair();
 //	check_tuple();
-	check_smart_pointers();
+//	check_smart_pointers();
 
 	/* container adaptors */
 	/* associative containers */
