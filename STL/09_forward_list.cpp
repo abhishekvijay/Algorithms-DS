@@ -3,7 +3,6 @@
 #include <iostream>
 #include <forward_list>
 
-
 template <typename T>
 void printFLElements(const T& coll)
 {
@@ -18,7 +17,7 @@ void check_forward_list()
 {
 	std::forward_list<char> fl;
 
-	//insert element
+	//insert element - push_back not supported due to performance
 	for(auto p = 'a'; p <= 'z' ; ++p)
 		fl.push_front(p);
 

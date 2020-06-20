@@ -15,6 +15,8 @@ extern void check_forward_list(void);
 extern void check_pair(void);
 extern void check_tuple(void);
 extern void check_smart_pointers(void);
+extern void check_multiset(void);
+extern void check_multimap(void);
 
 //container adaptors
 //associative containers
@@ -29,10 +31,12 @@ int main()
 
 	/* sequence containers */
 	check_vector();
-//	check_deque();
-//	check_array();
-//	check_list();	
-//	check_forward_list();	
+	check_deque();
+	check_array();
+	check_list();	
+	check_forward_list();	
+	check_multiset();
+	check_multimap();
 
 
 	/* stl utilities */
