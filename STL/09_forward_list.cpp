@@ -22,7 +22,7 @@ void check_forward_list()
 		fl.push_front(p);
 
 	//print elements
-	for(auto l : fl)
+	for(const auto& l : fl)
 		std::cout<<" "<<l;
 
 	std::cout<<std::endl;

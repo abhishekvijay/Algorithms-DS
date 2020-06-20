@@ -23,7 +23,7 @@ void check_deque()
 	std::cout<<"size - "<<deq.size()<<std::endl;
 
 	//print elements
-	for(auto d : deq)
+	for(const auto& d : deq)
 		std::cout<<" "<<d;
 
 	std::cout<<std::endl;

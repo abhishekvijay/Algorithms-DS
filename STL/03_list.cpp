@@ -21,7 +21,7 @@ void check_list()
 		lst.push_back(i);
 
 	//print elements
-	for(auto l : lst)
+	for(const auto& l : lst)
 		std::cout<<" "<<l;
 
 	std::cout<<std::endl;

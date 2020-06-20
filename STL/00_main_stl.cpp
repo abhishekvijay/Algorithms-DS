@@ -38,7 +38,6 @@ int main()
 	check_multiset();
 	check_multimap();
 
-
 	/* stl utilities */
 //	check_pair();
 //	check_tuple();

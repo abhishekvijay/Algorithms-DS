@@ -16,7 +16,7 @@ void check_array()
 	std::array<int, 10> arr = {1,2,3,4,5,6}; //initializer list
 
 	//print elements
-	for(auto a : arr)
+	for(const auto& a : arr)
 		std::cout <<" "<<a<<std::endl;
 
 	//template way

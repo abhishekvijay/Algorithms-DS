@@ -12,7 +12,7 @@ void check_vector()
 
 	std::cout<<"size - "<<vec.size()<<std::endl;
 
-	for(auto v : vec)
+	for(const auto& v : vec)
 		std::cout<<" "<<v;
 
 	std::cout<<std::endl;
