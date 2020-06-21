@@ -42,6 +42,18 @@ void check_multimap(void)
 	//template way
 	printMapElements(mm);
 
+	//const-iterator - read only mode
+	std::multimap<int, std::string>::const_iterator citr;
+	for(citr = mm.begin(); citr != mm.end(); ++citr)
+		std::cout<<"["<<citr->first<<","<<citr->second<<"]"<<std::endl;
+	std::cout<<std::endl;
+
+	//iterator - read/write mode
+	std::multimap<int, std::string>::iterator itr;
+	for(itr = mm.begin(); itr != mm.end(); ++itr)
+		std::cout<<"["<<itr->first<<","<<itr->second<<"]"<<std::endl;
+	std::cout<<std::endl;
+
 	//size
 	std::cout<<"size - "<<mm.size()<<std::endl;
 
