@@ -24,13 +24,13 @@ void check_array()
 
 	//const-iterator - read only mode
 	std::array<int, 10>::const_iterator citr;
-	for(citr = arr.begin(); citr < arr.end(); ++citr)
+	for(citr = arr.begin(); citr != arr.end(); ++citr)
 		std::cout<<" "<<*citr;
 	std::cout<<std::endl;
 
 	//iterator - read/write mode
 	std::array<int, 10>::iterator itr;
-	for(itr = arr.begin(); itr < arr.end(); ++itr)
+	for(itr = arr.begin(); itr != arr.end(); ++itr)
 		std::cout<<" "<<*itr;
 	std::cout<<std::endl;
 

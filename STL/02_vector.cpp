@@ -33,13 +33,13 @@ void check_vector()
 
 	//const-iterator - read only mode
 	std::vector<char>::iterator pos;
-	for(pos = vec.begin(); pos < vec.end(); ++pos)
+	for(pos = vec.begin(); pos != vec.end(); ++pos)
 		std::cout<<" "<<*pos;
 	std::cout<<std::endl;
 
 	//iterator - read/write mode
 	std::vector<char>::iterator iter;
-	for(iter = vec.begin(); iter < vec.end(); ++iter)
+	for(iter = vec.begin(); iter != vec.end(); ++iter)
 		std::cout<<" "<<*iter;
 	std::cout<<std::endl;
 

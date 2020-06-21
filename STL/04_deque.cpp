@@ -44,13 +44,13 @@ void check_deque()
 
 	//const-iterator
 	std::deque<char>::const_iterator citer;
-	for(citer = deq.begin(); citer < deq.end(); ++citer)
+	for(citer = deq.begin(); citer != deq.end(); ++citer)
 		std::cout<<" "<<*citer;
 	std::cout<<std::endl;
 
 	//iterator
 	std::deque<char>::iterator iter;
-	for(iter = deq.begin(); iter < deq.end(); ++iter)
+	for(iter = deq.begin(); iter != deq.end(); ++iter)
 		std::cout<<" "<<*iter;
 	std::cout<<std::endl;
 
