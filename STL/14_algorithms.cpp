@@ -48,6 +48,25 @@ void check_algorithm(void)
 	auto elm = std::minmax_element(vec.begin(), vec.end());
 	std::cout<<"["<<*elm.first<<","<<*elm.second<<"]"<<std::endl;
 
+	//find element when order is not known
+	//we will find either of one of them first
+	//then from first element's position we will check for other element
+	auto posn = std::find_if(vec.begin(), vec.end(), [](const int& i) { return i==55 || i==66; });
+	if (posn == vec.end())
+	{
+		std::cout<<"both elements not available"<<std::endl;
+	}
+	else if (*posn == 55)
+	{
+		auto start = posn;
+		auto pos66 = std::find(++start, vec.end(), 66);
+	}
+	else if (*posn == 66)
+	{
+		auto start = posn;
+		auto pos55 = std::find(++start, vec.end(), 55);
+	}
+
 	std::cout<<std::endl;
 	return;
 }
