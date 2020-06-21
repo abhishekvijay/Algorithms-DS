@@ -3,7 +3,7 @@
 #include <array>
 
 template <typename T>
-void printElements(const T& coll)
+void printArrayElements(const T& coll)
 {
 	for(const auto& t : coll) {
 		std::cout<<" "<<t;
@@ -20,12 +20,22 @@ void check_array()
 		std::cout <<" "<<a<<std::endl;
 
 	//template way
-	printElements(arr);
+	printArrayElements(arr);	
+
+	//const-iterator - read only mode
+	std::array<int, 10>::const_iterator citr;
+	for(citr = arr.begin(); citr < arr.end(); ++citr)
+		std::cout<<" "<<*citr;
+	std::cout<<std::endl;
+
+	//iterator - read/write mode
+	std::array<int, 10>::iterator itr;
+	for(itr = arr.begin(); itr < arr.end(); ++itr)
+		std::cout<<" "<<*itr;
+	std::cout<<std::endl;
 
 	//get size
 	std::cout<<"size -"<<arr.size()<<std::endl;
-
-	std::cout<<std::endl;
 
 	return;
 }
