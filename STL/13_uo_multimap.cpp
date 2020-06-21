@@ -42,6 +42,18 @@ void check_uo_multimap(void)
 	//template way
 	printUOMMElements(um);
 
+	//const-iterator - read only mode
+	std::unordered_multimap<int, std::string>::const_iterator citr;
+	for(citr = um.begin(); citr != um.end(); ++citr)
+		std::cout<<"["<<citr->first<<","<<citr->second<<"]"<<std::endl;
+	std::cout<<std::endl;
+
+	//iterator - read/write mode
+	std::unordered_multimap<int, std::string>::iterator itr;
+	for(itr = um.begin(); itr != um.end(); ++itr)
+		std::cout<<"["<<itr->first<<","<<itr->second<<"]"<<std::endl;
+	std::cout<<std::endl;	
+
 	std::cout<<std::endl;
 	return;
 }
