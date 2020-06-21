@@ -32,11 +32,22 @@ void check_uo_multiset(void)
 	//print
 	for(const auto& p : ms)
 		std::cout<<" "<<p;
-
 	std::cout<<std::endl;
 
+	//template way
 	printUOMSElements(ms);
-	
+
+	//const-iterator - read only mode
+	std::unordered_multiset<std::string>::const_iterator citr;
+	for(citr = ms.begin(); citr != ms.end(); ++citr)
+		std::cout<<" "<<*citr;
 	std::cout<<std::endl;
+
+	//iterator - read/write mode
+	std::unordered_multiset<std::string>::iterator itr;
+	for(itr = ms.begin(); itr != ms.end(); ++itr)
+		std::cout<<" "<<*itr;
+	std::cout<<std::endl;	
+	
 	return;
 }
