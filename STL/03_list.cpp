@@ -23,21 +23,28 @@ void check_list()
 	//print elements
 	for(const auto& l : lst)
 		std::cout<<" "<<l;
-
 	std::cout<<std::endl;
 
 	//template way
 	printListElements(lst);
 
+	//const-iterator - read only mode
+	std::list<char>::const_iterator citr;
+	for(citr = lst.begin(); citr != lst.end(); ++citr)
+		std::cout<<" "<<*citr;
+	std::cout<<std::endl;
+
+	//iterator - read/write mode
+	std::list<char>::iterator itr;
+	for(itr = lst.begin(); itr != lst.end(); ++itr)
+		std::cout<<" "<<*itr;
 	std::cout<<std::endl;
 
 	//collection way
-	while (!lst.empty())
-	{
+	while (!lst.empty()) {
 		std::cout<<" "<<lst.front();
 		lst.pop_front();
 	}
-
 	std::cout<<std::endl;
 
 	//print size
