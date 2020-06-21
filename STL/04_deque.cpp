@@ -25,16 +25,13 @@ void check_deque()
 	//print elements
 	for(const auto& d : deq)
 		std::cout<<" "<<d;
-
 	std::cout<<std::endl;
 
 	//another way to print
-	while (!deq.empty())
-	{
+	while (!deq.empty()) {
 		std::cout<<" "<<deq.front();
 		deq.pop_front();
 	}
-
 	std::cout<<std::endl;
 
 	//insert via push_back
@@ -43,7 +40,18 @@ void check_deque()
 
 	//template way
 	printElements(deq);
+	std::cout<<std::endl;
 
+	//const-iterator
+	std::deque<char>::const_iterator citer;
+	for(citer = deq.begin(); citer < deq.end(); ++citer)
+		std::cout<<" "<<*citer;
+	std::cout<<std::endl;
+
+	//iterator
+	std::deque<char>::iterator iter;
+	for(iter = deq.begin(); iter < deq.end(); ++iter)
+		std::cout<<" "<<*iter;
 	std::cout<<std::endl;
 
 	return;
