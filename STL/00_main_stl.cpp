@@ -17,6 +17,9 @@ extern void check_tuple(void);
 extern void check_smart_pointers(void);
 extern void check_multiset(void);
 extern void check_multimap(void);
+extern void check_uo_multiset(void);
+extern void check_uo_multimap(void);
+extern void check_algorithm(void);
 
 //container adaptors
 //associative containers
@@ -26,22 +29,31 @@ extern void check_multimap(void);
 
 int main()
 {
-	/* iterators */
-//	check_iterator();
-
 	/* sequence containers */
-	check_vector();
-	check_deque();
-	check_array();
-	check_list();	
-	check_forward_list();	
-	check_multiset();
-	check_multimap();
+//	check_vector();
+//	check_deque();
+//	check_array();
+//	check_list();	
+//	check_forward_list();	
+
+	/* associative containers */
+//	check_multiset();
+//	check_multimap(); 
+
+	/* unordered containers */
+//	check_uo_multiset();
+//	check_uo_multimap();
+
+	/* stl algorithm */
+	check_algorithm();
 
 	/* stl utilities */
 //	check_pair();
 //	check_tuple();
 //	check_smart_pointers();
+
+	/* iterators */
+//	check_iterator();
 
 	/* container adaptors */
 	/* associative containers */
