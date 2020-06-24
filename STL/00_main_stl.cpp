@@ -20,6 +20,10 @@ extern void check_multimap(void);
 extern void check_uo_multiset(void);
 extern void check_uo_multimap(void);
 extern void check_algorithm(void);
+extern void check_insert_iterator(void);
+extern void check_stream_iterator(void);
+extern void check_reverse_iterator(void);
+extern void check_move_iterator(void);
 
 //container adaptors
 //associative containers
@@ -45,7 +49,7 @@ int main()
 //	check_uo_multimap();
 
 	/* stl algorithm */
-	check_algorithm();
+//	check_algorithm();
 
 	/* stl utilities */
 //	check_pair();
@@ -53,6 +57,10 @@ int main()
 //	check_smart_pointers();
 
 	/* iterators */
+	check_insert_iterator();
+	check_stream_iterator();
+	check_reverse_iterator();
+	check_move_iterator();
 //	check_iterator();
 
 	/* container adaptors */
