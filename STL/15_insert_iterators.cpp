@@ -18,7 +18,7 @@ void printContainerElements(const T& coll, const std::string &str)
 	return;
 }
 
-void check_insert_iterator(void)
+void check_insert_iterator_adapter(void)
 {
 	std::list<int> coll;
 

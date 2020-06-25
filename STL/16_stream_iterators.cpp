@@ -4,7 +4,7 @@
 #include <vector>
 #include <string>
 
-void check_stream_iterator(void)
+void check_stream_iterator_adapter(void)
 {
 	return;
 }

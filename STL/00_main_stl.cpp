@@ -20,10 +20,10 @@ extern void check_multimap(void);
 extern void check_uo_multiset(void);
 extern void check_uo_multimap(void);
 extern void check_algorithm(void);
-extern void check_insert_iterator(void);
-extern void check_stream_iterator(void);
-extern void check_reverse_iterator(void);
-extern void check_move_iterator(void);
+extern void check_insert_iterator_adapter(void);
+extern void check_stream_iterator_adapter(void);
+extern void check_reverse_iterator_adapter(void);
+extern void check_move_iterator_adapter(void);
 
 //container adaptors
 //associative containers
@@ -56,18 +56,12 @@ int main()
 //	check_tuple();
 //	check_smart_pointers();
 
-	/* iterators */
-	check_insert_iterator();
-	check_stream_iterator();
-	check_reverse_iterator();
-	check_move_iterator();
-//	check_iterator();
-
-	/* container adaptors */
-	/* associative containers */
-	/* unordered associative containers */
-	/* algorithms */
-	/*functors, iterators, pair */
+	/* iterator adapter */
+	check_insert_iterator_adapter();
+	check_stream_iterator_adapter();
+	check_reverse_iterator_adapter();
+	check_move_iterator_adapter();
+//	check_iterator();	
 
 	return 0;
 }
