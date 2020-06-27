@@ -2,6 +2,7 @@
 #if 1
 
 #include <stdio.h>
+#include <iostream>
 
 //iterators
 extern void check_iterator(void);
@@ -33,16 +34,17 @@ extern void check_move_iterator_adapter(void);
 
 int main()
 {
+	std::cout<<"Hello World"<<std::endl;
 	/* sequence containers */
 //	check_vector();
 //	check_deque();
 //	check_array();
-//	check_list();	
-//	check_forward_list();	
+//	check_list();
+//	check_forward_list();
 
 	/* associative containers */
 //	check_multiset();
-//	check_multimap(); 
+//	check_multimap();
 
 	/* unordered containers */
 //	check_uo_multiset();
@@ -57,11 +59,11 @@ int main()
 //	check_smart_pointers();
 
 	/* iterator adapter */
-	check_insert_iterator_adapter();
-	check_stream_iterator_adapter();
-	check_reverse_iterator_adapter();
-	check_move_iterator_adapter();
-//	check_iterator();	
+//	check_insert_iterator_adapter();
+//	check_stream_iterator_adapter();
+//	check_reverse_iterator_adapter();
+//	check_move_iterator_adapter();
+//	check_iterator();
 
 	return 0;
 }

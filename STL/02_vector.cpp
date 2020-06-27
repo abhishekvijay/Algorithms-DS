@@ -17,7 +17,7 @@ void check_vector()
 {
 	std::vector<char> vec;
 
-	//insert 
+	//insert
 	for(auto p = 'a'; p <= 'z'; ++p)
 		vec.push_back(p);
 
@@ -29,7 +29,7 @@ void check_vector()
 	std::cout<<std::endl;
 
 	//template way
-	printVectorElements(vec);	
+	printVectorElements(vec);
 
 	//const-iterator - read only mode
 	std::vector<char>::iterator pos;
