@@ -6,6 +6,7 @@ There are:
 1. Iterative implementations
 2. Recursive implementations (&)
 3. Optimized implementations.
+4. C++ Implementations
 
 In some cases, different variants of particular algorithms are also available.
 
