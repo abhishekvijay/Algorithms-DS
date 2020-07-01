@@ -33,8 +33,7 @@ extern void check_move_iterator_adapter(void);
 //functors, iterators, pair
 
 int main()
-{
-	std::cout<<"Hello World"<<std::endl;
+{	
 	/* sequence containers */
 //	check_vector();
 //	check_deque();
@@ -59,10 +58,10 @@ int main()
 //	check_smart_pointers();
 
 	/* iterator adapter */
-//	check_insert_iterator_adapter();
-//	check_stream_iterator_adapter();
-//	check_reverse_iterator_adapter();
-//	check_move_iterator_adapter();
+	check_insert_iterator_adapter();
+	check_stream_iterator_adapter();
+	check_reverse_iterator_adapter();
+	check_move_iterator_adapter();
 //	check_iterator();
 
 	return 0;
