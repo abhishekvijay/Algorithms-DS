@@ -3,12 +3,52 @@
 #include <algorithm>
 #include <vector>
 #include <string>
+#include <list>
 
 template <typename T>
 void printSorted(const T& coll)
 {
 	for(auto const& p : coll)
 		std::cout<<" "<<p;
+	std::cout<<std::endl;
+	return;
+}
+
+void check_remove_element_algorithm()
+{
+	std::list<int> coll;
+
+	std::cout<<"================ remove algo ================"<<std::endl;
+
+	//insert 1~10 & 10~1
+	for(int i=1; i<=10; ++i)
+	{
+		coll.push_back(i);
+		coll.push_front(i);
+	}
+
+	//print
+	std::cout<<"pre - ";
+	std::copy(coll.begin(), coll.end(), std::ostream_iterator<int>(std::cout," "));
+
+	//remove
+	std::list<int>::iterator end = std::remove(coll.begin(), coll.end(), 5);
+	std::cout<<std::endl;
+
+	//print all elements
+	std::cout<<"post - ";
+	std::copy(coll.begin(), end, std::ostream_iterator<int>(std::cout," "));
+	std::cout<<std::endl;
+
+	//print no. of removed elements
+	std::cout<<"no. of removed elements - "<<std::distance(end, coll.end())<<std::endl;
+
+	//remove removed elements
+	coll.erase(end, coll.end());
+
+	//print modified collection
+	std::copy(coll.begin(), coll.end(), std::ostream_iterator<int>(std::cout, " "));
+
 	std::cout<<std::endl;
 	return;
 }
@@ -66,6 +106,9 @@ void check_algorithm(void)
 		auto start = posn;
 		auto pos55 = std::find(++start, vec.end(), 55);
 	}
+
+	//algorithm remove() & its correct usage
+	check_remove_element_algorithm();
 
 	std::cout<<std::endl;
 	return;
