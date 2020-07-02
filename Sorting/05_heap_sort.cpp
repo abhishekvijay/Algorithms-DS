@@ -28,6 +28,21 @@ void rec_adjustHeap(int *ptr, int root, int k)
 		ptr[f] = ptr[k];
 }
 
+void iter_adjustHeap(int *ptr, int root, int k)
+{
+	int f = root;
+	int val = ptr[k];
+	int s = getlargeSon(ptr, f, k-1);
+
+	while(s >= 0 && val < ptr[s])
+	{
+		ptr[f] = ptr[s];
+		f = s;
+		s = getlargeSon(ptr, f, k-1);
+	}
+	ptr[f] = val;
+}
+
 void heap_sort(int *ptr, int sz)
 {
 	if (ptr == NULL || sz <= 0)
@@ -55,7 +70,8 @@ void heap_sort(int *ptr, int sz)
 	for(i = sz; i > 0; --i)
 	{
 		f = ptr[0];
-		rec_adjustHeap(ptr, 0, sz);		
+		//rec_adjustHeap(ptr, 0, sz);
+		iter_adjustHeap(ptr, 0, sz);
 		printf("%d ", f);
 	}
 
