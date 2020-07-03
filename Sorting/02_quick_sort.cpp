@@ -63,9 +63,36 @@ void quickSort_Opt1(int arr[], int st, int en)
 	}
 }
 
+void quickSort_Opt2(int arr[], int st, int en)
+{
+	count++;
+
+	int j = 0;
+
+	while (st < en)
+	{
+		partition(arr, st, en, &j);
+
+		if (j-st < en-j)
+		{
+			quickSort_Opt2(arr, st, j-1);
+			st = j+1;
+		}
+		else
+		{
+			quickSort_Opt2(arr, j+1, en);
+			en = j-1;
+		}
+	}
+}
+
 void quick_sort(int *ptr, int sz)
 {
 	normal_quickSort(ptr, 0, sz);
+
+	quickSort_Opt1(ptr, 0, sz);
+
+	quickSort_Opt2(ptr, 0, sz);
 
 	return;
 }
