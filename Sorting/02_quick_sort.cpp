@@ -91,6 +91,11 @@ void quickSort_Opt3(int arr[], int st, int en)
 	return;
 }
 
+void quickSort_iterative(int arr[], int st, int en)
+{
+	return;
+}
+
 void quick_sort(int *ptr, int sz)
 {
 	//normal implementation
@@ -104,6 +109,9 @@ void quick_sort(int *ptr, int sz)
 
 	//using middle element as pivot
 	quickSort_Opt3(ptr, 0, sz);
+
+	//iterative approach
+	quickSort_iterative(ptr, 0, sz);
 
 	return;
 }
