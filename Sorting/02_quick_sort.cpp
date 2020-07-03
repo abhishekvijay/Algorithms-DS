@@ -47,6 +47,22 @@ void normal_quickSort(int arr[], int st, int en)
 	normal_quickSort(arr, j+1, en);
 }
 
+void quickSort_Opt1(int arr[], int st, int en)
+{
+	count++;
+
+	int j = 0;
+
+	while (st < en)
+	{
+		partition(arr, st, en, &j);
+
+		quickSort_Opt1(arr, st, j-1);
+
+		st = j+1;
+	}
+}
+
 void quick_sort(int *ptr, int sz)
 {
 	normal_quickSort(ptr, 0, sz);
