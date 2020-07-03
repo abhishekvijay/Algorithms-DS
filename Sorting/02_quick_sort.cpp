@@ -86,13 +86,24 @@ void quickSort_Opt2(int arr[], int st, int en)
 	}
 }
 
+void quickSort_Opt3(int arr[], int st, int en)
+{
+	return;
+}
+
 void quick_sort(int *ptr, int sz)
 {
+	//normal implementation
 	normal_quickSort(ptr, 0, sz);
 
+	//removed one recursive call
 	quickSort_Opt1(ptr, 0, sz);
 
+	//using recursion based on which side is smaller
 	quickSort_Opt2(ptr, 0, sz);
+
+	//using middle element as pivot
+	quickSort_Opt3(ptr, 0, sz);
 
 	return;
 }
