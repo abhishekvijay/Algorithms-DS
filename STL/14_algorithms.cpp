@@ -14,6 +14,12 @@ void printSorted(const T& coll)
 	return;
 }
 
+/*
+remove() algorithm can only be applied to sequence containters. 
+Associative containers have values in specific order, applying remove() will destroy that order.
+Hence in case of associative containers, it is best to use their own member function - erase().
+*/
+
 void check_remove_element_algorithm()
 {
 	std::list<int> coll;
@@ -31,11 +37,11 @@ void check_remove_element_algorithm()
 	std::cout<<"pre - ";
 	std::copy(coll.begin(), coll.end(), std::ostream_iterator<int>(std::cout," "));
 
-	//remove
+	//remove - this provides new end after removing elements from collection
 	std::list<int>::iterator end = std::remove(coll.begin(), coll.end(), 5);
 	std::cout<<std::endl;
 
-	//print all elements
+	//print all elements in collection
 	std::cout<<"post - ";
 	std::copy(coll.begin(), end, std::ostream_iterator<int>(std::cout," "));
 	std::cout<<std::endl;
@@ -43,7 +49,7 @@ void check_remove_element_algorithm()
 	//print no. of removed elements
 	std::cout<<"no. of removed elements - "<<std::distance(end, coll.end())<<std::endl;
 
-	//remove removed elements
+	//remove removed elements, after erasing elements, coll.end() == end
 	coll.erase(end, coll.end());
 
 	//print modified collection
