@@ -19,7 +19,11 @@ void check_stream_iterator_adapter(void)
 	//sorting elements
 	std::sort(coll.begin(), coll.end());
 
-	//copy to std::cout
+	//generic copy to cout - all elements are copied
+	std::copy(coll.begin(), coll.end(),
+				std::ostream_iterator<std::string>(std::cout, "\n"));
+
+	//unique copy to std::cout - omitting duplicates
 	std::unique_copy(coll.begin(), coll.end(), 
 				std::ostream_iterator<std::string>(std::cout, "\n"));
 	
