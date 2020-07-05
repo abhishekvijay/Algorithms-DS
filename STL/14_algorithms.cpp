@@ -14,6 +14,17 @@ void printSorted(const T& coll)
 	return;
 }
 
+void print(int val)
+{
+	std::cout<<val<<std::endl;
+	return;
+}
+
+int csquare(int val)
+{
+	return (val*val);
+}
+
 /*
 remove() algorithm can only be applied to sequence containters. 
 Associative containers have values in specific order, applying remove() will destroy that order.
@@ -115,6 +126,20 @@ void check_algorithm(void)
 
 	//algorithm remove() & its correct usage
 	check_remove_element_algorithm();
+
+	std::cout<<"##########################"<<std::endl;
+
+	//check for_each(), transform()
+	std::vector<int> coll, coll2;
+
+	for(int j = 1; j <= 10; ++j)
+		coll.push_back(j);
+
+	std::for_each(coll.begin(), coll.end(), print);
+
+	std::transform(coll.begin(), coll.end(), std::back_inserter(coll2),csquare);
+
+	printSorted(coll2);
 
 	std::cout<<std::endl;
 	return;
