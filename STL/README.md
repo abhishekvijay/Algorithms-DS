@@ -44,6 +44,10 @@ Contents
 
 **Allocators:**
 
+## Acknowledgements
+* [Nicolai M. Josuttis](http://www.josuttis.com/)
+* [StackOverflow](https://stackoverflow.com/)
+
 [contributors-shield]: https://img.shields.io/github/contributors/abhishekvijay/Algorithms-DS.svg?style=flat-square
 [contributors-url]: https://github.com/abhishekvijay/Algorithms-DS/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/abhishekvijay/Algorithms-DS.svg?style=flat-square
