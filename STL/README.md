@@ -43,3 +43,12 @@ Contents
 **Concurrency:**
 
 **Allocators:**
+
+[contributors-shield]: https://img.shields.io/github/contributors/abhishekvijay/Algorithms-DS.svg?style=flat-square
+[contributors-url]: https://github.com/abhishekvijay/Algorithms-DS/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/abhishekvijay/Algorithms-DS.svg?style=flat-square
+[forks-url]: https://github.com/abhishekvijay/Algorithms-DS/network/members
+[stars-shield]: https://img.shields.io/github/stars/abhishekvijay/Algorithms-DS.svg?style=flat-square
+[stars-url]: https://github.com/abhishekvijay/Algorithms-DS/stargazers
+[issues-shield]: https://img.shields.io/github/issues/abhishekvijay/Algorithms-DS.svg?style=flat-square
+[issues-url]: https://github.com/abhishekvijay/Algorithms-DS/issues
