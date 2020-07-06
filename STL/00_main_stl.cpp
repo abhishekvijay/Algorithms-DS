@@ -25,6 +25,10 @@ extern void check_insert_iterator_adapter(void);
 extern void check_stream_iterator_adapter(void);
 extern void check_reverse_iterator_adapter(void);
 extern void check_move_iterator_adapter(void);
+extern void check_predicates(void);
+extern void check_lambdas(void);
+extern void check_functors(void);
+extern void check_binders(void);
 
 //container adaptors
 //associative containers
@@ -35,34 +39,46 @@ extern void check_move_iterator_adapter(void);
 int main()
 {	
 	/* sequence containers */
-//	check_vector();
-//	check_deque();
-//	check_array();
-//	check_list();
-//	check_forward_list();
+	check_vector();
+	check_deque();
+	check_array();
+	check_list();
+	check_forward_list();
 
 	/* associative containers */
-//	check_multiset();
-//	check_multimap();
+	check_multiset();
+	check_multimap();
 
 	/* unordered containers */
-//	check_uo_multiset();
-//	check_uo_multimap();
+	check_uo_multiset();
+	check_uo_multimap();
 
 	/* stl algorithm */
-//	check_algorithm();
+	check_algorithm();
 
 	/* stl utilities */
-//	check_pair();
-//	check_tuple();
-//	check_smart_pointers();
+	check_pair();
+	check_tuple();
+	check_smart_pointers();
 
 	/* iterator adapter */
 	check_insert_iterator_adapter();
 	check_stream_iterator_adapter();
 	check_reverse_iterator_adapter();
 	check_move_iterator_adapter();
-//	check_iterator();
+	check_iterator();
+
+	/* predicates */
+	check_predicates();
+
+	/* lambdas */
+	check_lambdas();
+
+	/* function objects*/
+	check_functors();
+
+	/* binders */
+	check_binders();
 
 	return 0;
 }
