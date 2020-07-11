@@ -14,7 +14,7 @@ Contents
 
 **The Library:** **[`Containers`](#containers)__,[`Iterators`](#iterators)__,[`Algorithms`](#algorithm)__,[`Iterator Adapters`](#adapters)__,[`Lambdas`](#lambdas)__,[`Functors`](#functors)__,[`Binders`](#binders)**
 
-**STL Containers:** **[`Arrays`](#arrays)__,[`Vectors`](#vectors)__,[`Deques`](#deques)__,[`Lists`](#lists)__,[`Forward Lists`](#forward lists)__,[`Sets & Multisets`](#sets & multisets)__,[`Maps & Multimaps`](#maps & multimaps)__,[`Unordered Containers`](#unordered)__**
+**STL Containers:** **[`Arrays`](#arrays)__,[`Vectors`](#vectors)__,[`Deques`](#deques)__,[`Lists`](#lists)__,[`Forward Lists`](#forward_lists)__,[`Sets & Multisets`](#sets_&_multisets)__,[`Maps & Multimaps`](#maps_&_multimaps)__,[`Unordered_Containers`](#unordered_containers)__**
 
 **STL Iterators:**
 
@@ -119,25 +119,218 @@ for(const auto& a : arr8)						/* range based loops */
 
 Vectors [<img align="right" width="25" height="25" src="./Resources/arrow-to-top-512.png" title="Go to Contents">](#Contents)
 --------
+##### _/* initialization */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Vectors">](#Vectors)
+```cpp
+
+```
+###### _/* size */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Vectors">](#Vectors)
+```cpp
+
+```
+###### _/* assignment */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Vectors">](#Vectors)
+```cpp
+
+```
+###### _/* element-access */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Vectors">](#Vectors)
+```cpp
+
+```
+###### _/* iterators */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Vectors">](#Vectors)
+```cpp
+
+```
+###### _/* tuple interface */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Vectors">](#Vectors)
+```cpp
+
+```
+###### _/* print array elements */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Vectors">](#Vectors)
+```cpp
+
+```
 
 Deques [<img align="right" width="25" height="25" src="./Resources/arrow-to-top-512.png" title="Go to Contents">](#Contents)
 -------
+##### _/* initialization */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Deques">](#Deques)
+```cpp
+
+```
+###### _/* size */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Deques">](#Deques)
+```cpp
+
+```
+###### _/* assignment */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Deques">](#Deques)
+```cpp
+
+```
+###### _/* element-access */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Deques">](#Deques)
+```cpp
+
+```
+###### _/* iterators */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Deques">](#Deques)
+```cpp
+
+```
+###### _/* tuple interface */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Deques">](#Deques)
+```cpp
+
+```
+###### _/* print array elements */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Deques">](#Deques)
+```cpp
+
+```
 
 Lists [<img align="right" width="25" height="25" src="./Resources/arrow-to-top-512.png" title="Go to Contents">](#Contents)
 -----
+##### _/* initialization */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Lists">](#Lists)
+```cpp
 
-Forward Lists [<img align="right" width="25" height="25" src="./Resources/arrow-to-top-512.png" title="Go to Contents">](#Contents)
+```
+###### _/* size */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Lists">](#Lists)
+```cpp
+
+```
+###### _/* assignment */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Lists">](#Lists)
+```cpp
+
+```
+###### _/* element-access */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Lists">](#Lists)
+```cpp
+
+```
+###### _/* iterators */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Lists">](#Lists)
+```cpp
+
+```
+###### _/* tuple interface */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Lists">](#Lists)
+```cpp
+
+```
+###### _/* print array elements */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Lists">](#Lists)
+```cpp
+
+```
+
+Forward_Lists [<img align="right" width="25" height="25" src="./Resources/arrow-to-top-512.png" title="Go to Contents">](#Contents)
 -------------
+##### _/* initialization */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Forward Lists">](#Forward_Lists)
+```cpp
 
-Sets & Multisets [<img align="right" width="25" height="25" src="./Resources/arrow-to-top-512.png" title="Go to Contents">](#Contents)
+```
+###### _/* size */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Forward Lists">](#Forward_Lists)
+```cpp
+
+```
+###### _/* assignment */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Forward Lists">](#Forward_Lists)
+```cpp
+
+```
+###### _/* element-access */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Forward Lists">](#Forward_Lists)
+```cpp
+
+```
+###### _/* iterators */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Forward Lists">](#Forward_Lists)
+```cpp
+
+```
+###### _/* tuple interface */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Forward Lists">](#Forward_Lists)
+```cpp
+
+```
+###### _/* print array elements */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Forward Lists">](#Forward_Lists)
+```cpp
+
+```
+
+Sets_&_Multisets [<img align="right" width="25" height="25" src="./Resources/arrow-to-top-512.png" title="Go to Contents">](#Contents)
 ---------------
+##### _/* initialization */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Sets & Multisets">](#Sets_&_Multisets)
+```cpp
 
-Maps & Multimaps [<img align="right" width="25" height="25" src="./Resources/arrow-to-top-512.png" title="Go to Contents">](#Contents)
+```
+###### _/* size */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Sets & Multisets">](#Sets_&_Multisets)
+```cpp
+
+```
+###### _/* assignment */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Sets & Multisets">](#Sets_&_Multisets)
+```cpp
+
+```
+###### _/* element-access */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Sets & Multisets">](#Sets_&_Multisets)
+```cpp
+
+```
+###### _/* iterators */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Sets & Multisets">](#Sets_&_Multisets)
+```cpp
+
+```
+###### _/* tuple interface */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Sets & Multisets">](#Sets_&_Multisets)
+```cpp
+
+```
+###### _/* print array elements */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Sets & Multisets">](#Sets_&_Multisets)
+```cpp
+
+```
+Maps_&_Multimaps [<img align="right" width="25" height="25" src="./Resources/arrow-to-top-512.png" title="Go to Contents">](#Contents)
 ---------------
+##### _/* initialization */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Maps & Multimaps">](#Maps_&_Multimaps)
+```cpp
 
-Unordered Containers [<img align="right" width="25" height="25" src="./Resources/arrow-to-top-512.png" title="Go to Contents">](#Contents)
+```
+###### _/* size */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Maps & Multimaps">](#Maps_&_Multimaps)
+```cpp
+
+```
+###### _/* assignment */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Maps & Multimaps">](#Maps_&_Multimaps)
+```cpp
+
+```
+###### _/* element-access */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Maps & Multimaps">](#Maps_&_Multimaps)
+```cpp
+
+```
+###### _/* iterators */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Maps & Multimaps">](#Maps_&_Multimaps)
+```cpp
+
+```
+###### _/* tuple interface */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Maps & Multimaps">](#Maps_&_Multimaps)
+```cpp
+
+```
+###### _/* print array elements */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Maps & Multimaps">](#Maps_&_Multimaps)
+```cpp
+
+```
+Unordered_Containers [<img align="right" width="25" height="25" src="./Resources/arrow-to-top-512.png" title="Go to Contents">](#Contents)
 ---------------------
+##### _/* initialization */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Unordered Containers">](#Unordered_Containers)
+```cpp
 
+```
+###### _/* size */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Unordered Containers">](#Unordered_Containers)
+```cpp
+
+```
+###### _/* assignment */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Unordered Containers">](#Unordered_Containers)
+```cpp
+
+```
+###### _/* element-access */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Unordered Containers">](#Unordered_Containers)
+```cpp
+
+```
+###### _/* iterators */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Unordered Containers">](#Unordered_Containers)
+```cpp
+
+```
+###### _/* tuple interface */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Unordered Containers">](#Unordered_Containers)
+```cpp
+
+```
+###### _/* print array elements */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Unordered Containers">](#Unordered_Containers)
+```cpp
+
+```
 ## Acknowledgements [<img align="right" width="25" height="25" src="./Resources/arrow-to-top-512.png" title="Go to Contents">](#Contents)
 * [Nicolai M. Josuttis](http://www.josuttis.com/)
 * [StackOverflow](https://stackoverflow.com/)
