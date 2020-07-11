@@ -79,25 +79,29 @@ std::cout<<"itr - ";
 for(itr = arr8.begin(); itr != arr8.end(); ++itr)
 	std::cout<<" "<<*itr;
 std::cout<<std::endl;
-	/* const-iterator - read only mode */
+
+/* const-iterator - read only mode */
 std::array<int, 6>::const_iterator citr;				/* constant iterator */
 std::cout<<"citr - ";
 for(citr = arr8.cbegin(); citr != arr8.cend(); ++citr)
 	std::cout<<" "<<*citr;
 std::cout<<std::endl;
-	/* reverse iterator */
+
+/* reverse iterator */
 std::array<int, 6>::reverse_iterator ritr;				/* reverse iterator */
 std::cout<<"ritr - ";
 for(ritr = arr8.rbegin(); ritr != arr8.rend(); ++ritr)
 	std::cout<<" "<<*ritr;
 std::cout<<std::endl;
-	/* const-reverse iterator */
+
+/* const-reverse iterator */
 std::array<int, 6>::const_reverse_iterator critr;			/* constant reverse iterator */
 std::cout<<"citr - ";
 for(critr = arr8.crbegin(); critr != arr8.crend(); --critr)
 	std::cout<<" "<<*critr;
 std::cout<<std::endl;
-``
+```
+
 ###### _/* tuple interface */_
 ```cpp
 typedef std::array<std::string, 6> CustomString;
@@ -108,6 +112,7 @@ std::cout<<"tuple size - "<<std::tuple_size<CustomString>::value<<std::endl;
 std::cout<<"tuple element - "<<std::tuple_element<2, CustomString>::type()<<std::endl;
 std::cout<<"get element - "<<std::get<2>(str)<<std::endl;
 ```
+
 ###### _/* print array elements */_
 ```cpp
 for(const auto& a : arr8)						/* range based loops */
