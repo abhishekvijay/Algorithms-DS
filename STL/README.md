@@ -38,7 +38,7 @@ Contents
 
 **Allocators:**
 
-Arrays [<img align="right" width="25" height="25" src="./Resources/arrow-to-top-512.png" title="Go to Contents">](#Contents)
+Arrays
 -------------
 ##### _/* initialization */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Arrays">](#Arrays)
 ```cpp
