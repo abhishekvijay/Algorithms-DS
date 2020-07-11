@@ -38,8 +38,8 @@ Contents
 
 **Allocators:**
 
-Arrays
--------
+Arrays 	<img align="right" width="52" height="52" src="https://github.com/abhishekvijay/Algorithms-DS/tree/master/STL/Resources/arrow-to-top-512.png">
+-------------
 ###### _/* initialization */_
 ```cpp
 std::array<int, 6> arr1 = {};						/* all elements default initialized with 0 */
