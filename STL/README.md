@@ -40,7 +40,7 @@ Contents
 
 Arrays
 -------------
-##### _/* initialization */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Arrays">](#Arrays)
+##### _/* initialization */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 std::array<int, 6> arr1 = {};						/* all elements default initialized with 0 */
 std::array<int, 6> arr2 = {1,2,3,4,5,6};				/* array initialized with initializer list */
@@ -50,28 +50,28 @@ std::array<int, 6> arr5  = arr2;					/* copy constructor */
 std::array<int, 6> arr6(std::move(arr2));				/* move constructor */
 std::array<int, 6> arr7 = std::move(arr2);				/* move constructor */
 ```
-###### _/* size */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Arrays">](#Arrays)
+###### _/* size */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 std::array<int, 6> arr8 = {3,6,9,12,15,18};
 std::cout<<"empty - "<<arr8.empty()<<std::endl;				/* empty */
 std::cout<<"size - "<<arr8.size()<<std::endl;				/* size */
 std::cout<<"max size - "<<arr8.max_size()<<std::endl;			/* max_size */
 ```
-###### _/* assignment */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Arrays">](#Arrays)
+###### _/* assignment */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 std::array<int, 6> arr9;
 arr9.fill(10);								/* assigns value to each element in array */	
 arr9.swap(arr8);							/* using swap */
 std::swap(arr8, arr9);							/* alternative way - swap */	
 ```
-###### _/* element-access */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Arrays">](#Arrays)
+###### _/* element-access */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 std::cout<<"element at pos 5 = "<<arr8[5]<<std::endl;			/* direct access */
 std::cout<<"element at pos 5 = "<<arr8.at(4)<<std::endl;		/* direct access */
 std::cout<<"front element = "<<arr8.front()<<std::endl;			/* access front element */
 std::cout<<"back element = "<<arr8.back()<<std::endl;			/* access last element */
 ```
-###### _/* iterators */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Arrays">](#Arrays)
+###### _/* iterators */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 /* normal iterator - read/write mode */
 std::array<int, 6>::iterator itr;					/* normal iterator */
@@ -101,7 +101,7 @@ for(critr = arr8.crbegin(); critr != arr8.crend(); --critr)
 	std::cout<<" "<<*critr;
 std::cout<<std::endl;
 ```
-###### _/* tuple interface */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Arrays">](#Arrays)
+###### _/* tuple interface */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 typedef std::array<std::string, 6> CustomString;
 
@@ -111,223 +111,223 @@ std::cout<<"tuple size - "<<std::tuple_size<CustomString>::value<<std::endl;
 std::cout<<"tuple element - "<<std::tuple_element<2, CustomString>::type()<<std::endl;
 std::cout<<"get element - "<<std::get<2>(str)<<std::endl;
 ```
-###### _/* print array elements */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Arrays">](#Arrays)
+###### _/* print array elements */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 for(const auto& a : arr8)						/* range based loops */
 	std::cout <<" "<<a<<std::endl;
 ```
 
-Vectors [<img align="right" width="25" height="25" src="./Resources/arrow-to-top-512.png" title="Go to Contents">](#Contents)
+Vectors 
 --------
-##### _/* initialization */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Vectors">](#Vectors)
+##### _/* initialization */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
-###### _/* size */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Vectors">](#Vectors)
+###### _/* size */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
-###### _/* assignment */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Vectors">](#Vectors)
+###### _/* assignment */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
-###### _/* element-access */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Vectors">](#Vectors)
+###### _/* element-access */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
-###### _/* iterators */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Vectors">](#Vectors)
+###### _/* iterators */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
-###### _/* tuple interface */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Vectors">](#Vectors)
+###### _/* tuple interface */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
-###### _/* print array elements */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Vectors">](#Vectors)
+###### _/* print array elements */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
 
-Deques [<img align="right" width="25" height="25" src="./Resources/arrow-to-top-512.png" title="Go to Contents">](#Contents)
+Deques 
 -------
-##### _/* initialization */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Deques">](#Deques)
+##### _/* initialization */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
-###### _/* size */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Deques">](#Deques)
+###### _/* size */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
-###### _/* assignment */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Deques">](#Deques)
+###### _/* assignment */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
-###### _/* element-access */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Deques">](#Deques)
+###### _/* element-access */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
-###### _/* iterators */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Deques">](#Deques)
+###### _/* iterators */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
-###### _/* tuple interface */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Deques">](#Deques)
+###### _/* tuple interface */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
-###### _/* print array elements */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Deques">](#Deques)
+###### _/* print array elements */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
 
-Lists [<img align="right" width="25" height="25" src="./Resources/arrow-to-top-512.png" title="Go to Contents">](#Contents)
+Lists 
 -----
-##### _/* initialization */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Lists">](#Lists)
+##### _/* initialization */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
-###### _/* size */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Lists">](#Lists)
+###### _/* size */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
-###### _/* assignment */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Lists">](#Lists)
+###### _/* assignment */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
-###### _/* element-access */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Lists">](#Lists)
+###### _/* element-access */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
-###### _/* iterators */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Lists">](#Lists)
+###### _/* iterators */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
-###### _/* tuple interface */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Lists">](#Lists)
+###### _/* tuple interface */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
-###### _/* print array elements */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Lists">](#Lists)
+###### _/* print array elements */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
 
-Forward_Lists [<img align="right" width="25" height="25" src="./Resources/arrow-to-top-512.png" title="Go to Contents">](#Contents)
+Forward_Lists 
 -------------
-##### _/* initialization */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Forward Lists">](#Forward_Lists)
+##### _/* initialization */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
-###### _/* size */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Forward Lists">](#Forward_Lists)
+###### _/* size */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
-###### _/* assignment */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Forward Lists">](#Forward_Lists)
+###### _/* assignment */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
-###### _/* element-access */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Forward Lists">](#Forward_Lists)
+###### _/* element-access */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
-###### _/* iterators */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Forward Lists">](#Forward_Lists)
+###### _/* iterators */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
-###### _/* tuple interface */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Forward Lists">](#Forward_Lists)
+###### _/* tuple interface */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
-###### _/* print array elements */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Forward Lists">](#Forward_Lists)
+###### _/* print array elements */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
 
-Sets_&_Multisets [<img align="right" width="25" height="25" src="./Resources/arrow-to-top-512.png" title="Go to Contents">](#Contents)
----------------
-##### _/* initialization */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Sets & Multisets">](#Sets_&_Multisets)
+Sets_&_Multisets 
+-----------------
+##### _/* initialization */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
-###### _/* size */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Sets & Multisets">](#Sets_&_Multisets)
+###### _/* size */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
-###### _/* assignment */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Sets & Multisets">](#Sets_&_Multisets)
+###### _/* assignment */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
-###### _/* element-access */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Sets & Multisets">](#Sets_&_Multisets)
+###### _/* element-access */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
-###### _/* iterators */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Sets & Multisets">](#Sets_&_Multisets)
+###### _/* iterators */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
-###### _/* tuple interface */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Sets & Multisets">](#Sets_&_Multisets)
+###### _/* tuple interface */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
-###### _/* print array elements */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Sets & Multisets">](#Sets_&_Multisets)
+###### _/* print array elements */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
-Maps_&_Multimaps [<img align="right" width="25" height="25" src="./Resources/arrow-to-top-512.png" title="Go to Contents">](#Contents)
----------------
-##### _/* initialization */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Maps & Multimaps">](#Maps_&_Multimaps)
+Maps_&_Multimaps 
+-----------------
+##### _/* initialization */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
-###### _/* size */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Maps & Multimaps">](#Maps_&_Multimaps)
+###### _/* size */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
-###### _/* assignment */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Maps & Multimaps">](#Maps_&_Multimaps)
+###### _/* assignment */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
-###### _/* element-access */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Maps & Multimaps">](#Maps_&_Multimaps)
+###### _/* element-access */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
-###### _/* iterators */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Maps & Multimaps">](#Maps_&_Multimaps)
+###### _/* iterators */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
-###### _/* tuple interface */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Maps & Multimaps">](#Maps_&_Multimaps)
+###### _/* tuple interface */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
-###### _/* print array elements */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Maps & Multimaps">](#Maps_&_Multimaps)
+###### _/* print array elements */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
-Unordered_Containers [<img align="right" width="25" height="25" src="./Resources/arrow-to-top-512.png" title="Go to Contents">](#Contents)
+Unordered_Containers 
 ---------------------
-##### _/* initialization */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Unordered Containers">](#Unordered_Containers)
+##### _/* initialization */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
-###### _/* size */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Unordered Containers">](#Unordered_Containers)
+###### _/* size */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
-###### _/* assignment */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Unordered Containers">](#Unordered_Containers)
+###### _/* assignment */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
-###### _/* element-access */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Unordered Containers">](#Unordered_Containers)
+###### _/* element-access */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
-###### _/* iterators */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Unordered Containers">](#Unordered_Containers)
+###### _/* iterators */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
-###### _/* tuple interface */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Unordered Containers">](#Unordered_Containers)
+###### _/* tuple interface */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
-###### _/* print array elements */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Unordered Containers">](#Unordered_Containers)
+###### _/* print array elements */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
