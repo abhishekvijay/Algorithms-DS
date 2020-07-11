@@ -14,7 +14,7 @@ Contents
 
 **The Library:** **[`Containers`](#containers)__,[`Iterators`](#iterators)__,[`Algorithms`](#algorithm)__,[`Iterator Adapters`](#adapters)__,[`Lambdas`](#lambdas)__,[`Functors`](#functors)__,[`Binders`](#binders)**
 
-**STL Containers:** **[`Arrays`](#arrays)__,[`Vectors`](#vectors)__,[`Deques`](#deques)__,[`List`](#list)__,[`Forward List`](#forwardlist)__,[`Sets & Multisets`](#sets)__,[`Maps & Multimaps`](#maps)__,[`Unordered Containers`](#unordered)__**
+**STL Containers:** **[`Arrays`](#arrays)__,[`Vectors`](#vectors)__,[`Deques`](#deques)__,[`Lists`](#lists)__,[`Forward Lists`](#forward lists)__,[`Sets & Multisets`](#sets & multisets)__,[`Maps & Multimaps`](#maps & multimaps)__,[`Unordered Containers`](#unordered)__**
 
 **STL Iterators:**
 
@@ -38,7 +38,7 @@ Contents
 
 **Allocators:**
 
-Arrays 	[<img align="right" width="25" height="25" src="./Resources/arrow-to-top-512.png" title="Go to Contents">](#Contents)
+Arrays [<img align="right" width="25" height="25" src="./Resources/arrow-to-top-512.png" title="Go to Contents">](#Contents)
 -------------
 ##### _/* initialization */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Arrays">](#Arrays)
 ```cpp
@@ -116,6 +116,27 @@ std::cout<<"get element - "<<std::get<2>(str)<<std::endl;
 for(const auto& a : arr8)						/* range based loops */
 	std::cout <<" "<<a<<std::endl;
 ```
+
+Vectors [<img align="right" width="25" height="25" src="./Resources/arrow-to-top-512.png" title="Go to Contents">](#Contents)
+--------
+
+Deques [<img align="right" width="25" height="25" src="./Resources/arrow-to-top-512.png" title="Go to Contents">](#Contents)
+-------
+
+Lists [<img align="right" width="25" height="25" src="./Resources/arrow-to-top-512.png" title="Go to Contents">](#Contents)
+-----
+
+Forward Lists [<img align="right" width="25" height="25" src="./Resources/arrow-to-top-512.png" title="Go to Contents">](#Contents)
+-------------
+
+Sets & Multisets [<img align="right" width="25" height="25" src="./Resources/arrow-to-top-512.png" title="Go to Contents">](#Contents)
+---------------
+
+Maps & Multimaps [<img align="right" width="25" height="25" src="./Resources/arrow-to-top-512.png" title="Go to Contents">](#Contents)
+---------------
+
+Unordered Containers [<img align="right" width="25" height="25" src="./Resources/arrow-to-top-512.png" title="Go to Contents">](#Contents)
+---------------------
 
 ## Acknowledgements [<img align="right" width="25" height="25" src="./Resources/arrow-to-top-512.png" title="Go to Contents">](#Contents)
 * [Nicolai M. Josuttis](http://www.josuttis.com/)
