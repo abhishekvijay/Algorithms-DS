@@ -115,6 +115,16 @@ std::cout<<"get element - "<<std::get<2>(str)<<std::endl;
 ```cpp
 for(const auto& a : arr8)						/* range based loops */
 	std::cout <<" "<<a<<std::endl;
+	
+/* template method */
+template <typename T>
+void printArrayElements(const T& coll)
+{
+	for(const auto& t : coll) {
+		std::cout<<" "<<t;
+	}
+	std::cout<<std::endl;
+}
 ```
 
 Vectors 
