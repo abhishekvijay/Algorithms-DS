@@ -12,9 +12,9 @@ Contents
 ---------
 **Utilities:** **[`Pairs`](#pairs)__,__[`Tuples`](#tuples)__,__[`Smart Pointers`](#smartpointers)__,__[`Traits`](#traits)__,__[`Auxiliary Functions`](#auxiliary)**
 
-**The Library:** **[`Containers`](#containers)__,[`Iterators`](#iterators)__,[`Algorithms`](#algorithm)__,[`Iterator Adapters`](#adapters)__,[`Lambdas`](#lambdas)__,[`Functors`](#functors)__,[`Binders`](#binders)**
+**The Library:** **[`Containers`](#containers)__,__[`Iterators`](#iterators)__,__[`Algorithms`](#algorithm)__,__[`Iterator Adapters`](#adapters)__,__[`Lambdas`](#lambdas)__,__[`Functors`](#functors)__,__[`Binders`](#binders)**
 
-**STL Containers:** **[`Arrays`](#arrays)__,[`Vectors`](#vectors)__,[`Deques`](#deques)__,[`Lists`](#lists)__,[`Forward Lists`](#forward_lists)__,[`Sets & Multisets`](#sets_&_multisets)__,[`Maps & Multimaps`](#maps_&_multimaps)__,[`Unordered_Containers`](#unordered_containers)__**
+**STL Containers:** **[`Arrays`](#arrays)__,__[`Vectors`](#vectors)__,__[`Deques`](#deques)__,__[`Lists`](#lists)__,__[`Forward Lists`](#forward_lists)__,__[`Sets & Multisets`](#sets_&_multisets)__,__[`Maps & Multimaps`](#maps_&_multimaps)__,__[`Unordered_Containers`](#unordered_containers)__**
 
 **STL Iterators:**
 
