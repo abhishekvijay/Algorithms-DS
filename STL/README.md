@@ -101,7 +101,6 @@ for(critr = arr8.crbegin(); critr != arr8.crend(); --critr)
 	std::cout<<" "<<*critr;
 std::cout<<std::endl;
 ```
-
 ###### _/* tuple interface */_
 ```cpp
 typedef std::array<std::string, 6> CustomString;
@@ -112,7 +111,6 @@ std::cout<<"tuple size - "<<std::tuple_size<CustomString>::value<<std::endl;
 std::cout<<"tuple element - "<<std::tuple_element<2, CustomString>::type()<<std::endl;
 std::cout<<"get element - "<<std::get<2>(str)<<std::endl;
 ```
-
 ###### _/* print array elements */_
 ```cpp
 for(const auto& a : arr8)						/* range based loops */
