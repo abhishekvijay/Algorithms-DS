@@ -38,9 +38,9 @@ Contents
 
 **Allocators:**
 
-Arrays 	[<img align="right" width="25" height="25" src="./Resources/arrow-to-top-512.png">](#Contents)
+Arrays 	[<img align="right" width="25" height="25" src="./Resources/arrow-to-top-512.png" title="Go to Contents">](#Contents)
 -------------
-###### _/* initialization */_
+###### _/* initialization */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Arrays">](#arrays)
 ```cpp
 std::array<int, 6> arr1 = {};						/* all elements default initialized with 0 */
 std::array<int, 6> arr2 = {1,2,3,4,5,6};				/* array initialized with initializer list */
@@ -50,28 +50,28 @@ std::array<int, 6> arr5  = arr2;					/* copy constructor */
 std::array<int, 6> arr6(std::move(arr2));				/* move constructor */
 std::array<int, 6> arr7 = std::move(arr2);				/* move constructor */
 ```
-###### _/* size */_
+###### _/* size */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Arrays">](#arrays)
 ```cpp
 std::array<int, 6> arr8 = {3,6,9,12,15,18};
 std::cout<<"empty - "<<arr8.empty()<<std::endl;				/* empty */
 std::cout<<"size - "<<arr8.size()<<std::endl;				/* size */
 std::cout<<"max size - "<<arr8.max_size()<<std::endl;			/* max_size */
 ```
-###### _/* assignment */_
+###### _/* assignment */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Arrays">](#arrays)
 ```cpp
 std::array<int, 6> arr9;
 arr9.fill(10);								/* assigns value to each element in array */	
 arr9.swap(arr8);							/* using swap */
 std::swap(arr8, arr9);							/* alternative way - swap */	
 ```
-###### _/* element-access */_
+###### _/* element-access */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Arrays">](#arrays)
 ```cpp
 std::cout<<"element at pos 5 = "<<arr8[5]<<std::endl;			/* direct access */
 std::cout<<"element at pos 5 = "<<arr8.at(4)<<std::endl;		/* direct access */
 std::cout<<"front element = "<<arr8.front()<<std::endl;			/* access front element */
 std::cout<<"back element = "<<arr8.back()<<std::endl;			/* access last element */
 ```
-###### _/* iterators */_
+###### _/* iterators */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Arrays">](#arrays)
 ```cpp
 /* normal iterator - read/write mode */
 std::array<int, 6>::iterator itr;					/* normal iterator */
@@ -101,7 +101,7 @@ for(critr = arr8.crbegin(); critr != arr8.crend(); --critr)
 	std::cout<<" "<<*critr;
 std::cout<<std::endl;
 ```
-###### _/* tuple interface */_
+###### _/* tuple interface */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Arrays">](#arrays)
 ```cpp
 typedef std::array<std::string, 6> CustomString;
 
@@ -111,13 +111,13 @@ std::cout<<"tuple size - "<<std::tuple_size<CustomString>::value<<std::endl;
 std::cout<<"tuple element - "<<std::tuple_element<2, CustomString>::type()<<std::endl;
 std::cout<<"get element - "<<std::get<2>(str)<<std::endl;
 ```
-###### _/* print array elements */_
+###### _/* print array elements */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Arrays">](#arrays)
 ```cpp
 for(const auto& a : arr8)						/* range based loops */
 	std::cout <<" "<<a<<std::endl;
 ```
 
-## Acknowledgements
+## Acknowledgements [<img align="right" width="25" height="25" src="./Resources/arrow-to-top-512.png" title="Go to Contents">](#Contents)
 * [Nicolai M. Josuttis](http://www.josuttis.com/)
 * [StackOverflow](https://stackoverflow.com/)
 
