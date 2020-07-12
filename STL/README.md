@@ -38,7 +38,9 @@ Contents
 
 **Allocators:**
 
-Arrays
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+ARRAYS
 -------------
 ##### _/* initialization */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
@@ -127,7 +129,7 @@ void printArrayElements(const T& coll)
 }
 ```
 
-Vectors 
+VECTORS
 --------
 ##### _/* initialization */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
@@ -158,7 +160,7 @@ Vectors
 
 ```
 
-Deques 
+DEQUES 
 -------
 ##### _/* initialization */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
@@ -189,7 +191,7 @@ Deques
 
 ```
 
-Lists 
+LISTS 
 -----
 ##### _/* initialization */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
@@ -220,7 +222,7 @@ Lists
 
 ```
 
-Forward_Lists 
+FORWARD_LISTS 
 -------------
 ##### _/* initialization */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
@@ -251,7 +253,7 @@ Forward_Lists
 
 ```
 
-Sets_&_Multisets 
+SETS_&_MULTISETS 
 -----------------
 ##### _/* initialization */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
@@ -281,7 +283,7 @@ Sets_&_Multisets
 ```cpp
 
 ```
-Maps_&_Multimaps 
+MAPS_&_MULTIMAPS
 -----------------
 ##### _/* initialization */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
@@ -311,7 +313,7 @@ Maps_&_Multimaps
 ```cpp
 
 ```
-Unordered_Containers 
+UNORDERED_CONTAINERS
 ---------------------
 ##### _/* initialization */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
@@ -341,7 +343,7 @@ Unordered_Containers
 ```cpp
 
 ```
-## Acknowledgements [<img align="right" width="25" height="25" src="./Resources/arrow-to-top-512.png" title="Go to Contents">](#Contents)
+## ACKNOWLEDGEMENTS [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 * [Nicolai M. Josuttis](http://www.josuttis.com/)
 * [StackOverflow](https://stackoverflow.com/)
 
