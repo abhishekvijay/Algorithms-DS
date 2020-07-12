@@ -42,6 +42,10 @@ Contents
 
 ARRAYS
 -------------
+##### _/* header */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
+```cpp
+#include <array>
+```
 ##### _/* initialization */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 std::array<int, 6> arr1 = {};						/* all elements default initialized with 0 */
@@ -128,6 +132,10 @@ void printArrayElements(const T& coll)
 	std::cout<<std::endl;
 }
 ```
+###### _/* array_notes */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
+```cpp
+
+```
 
 VECTORS
 --------
@@ -156,6 +164,10 @@ VECTORS
 
 ```
 ###### _/* print array elements */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
+```cpp
+
+```
+###### _/* vector notes */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
@@ -190,6 +202,10 @@ DEQUES
 ```cpp
 
 ```
+###### _/* deques notes */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
+```cpp
+
+```
 
 LISTS 
 -----
@@ -218,6 +234,10 @@ LISTS
 
 ```
 ###### _/* print array elements */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
+```cpp
+
+```
+###### _/* list notes */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
 
 ```
@@ -252,6 +272,10 @@ FORWARD_LISTS
 ```cpp
 
 ```
+###### _/* forward-list notes */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
+```cpp
+
+```
 
 SETS_and_MULTISETS 
 -----------------
@@ -283,6 +307,11 @@ SETS_and_MULTISETS
 ```cpp
 
 ```
+###### _/* set & multiset notes */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
+```cpp
+
+```
+
 MAPS_and_MULTIMAPS
 -----------------
 ##### _/* initialization */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
@@ -313,6 +342,11 @@ MAPS_and_MULTIMAPS
 ```cpp
 
 ```
+###### _/* map & multimap notes */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
+```cpp
+
+```
+
 UNORDERED_CONTAINERS
 ---------------------
 ##### _/* initialization */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
@@ -343,6 +377,11 @@ UNORDERED_CONTAINERS
 ```cpp
 
 ```
+###### _/* unordered-container notes */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
+```cpp
+
+```
+
 ## ACKNOWLEDGEMENTS [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 * [Nicolai M. Josuttis](http://www.josuttis.com/)
 * [StackOverflow](https://stackoverflow.com/)
