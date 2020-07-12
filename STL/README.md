@@ -14,7 +14,7 @@ Contents
 
 **The Library:** **[`Containers`](#containers)__,__[`Iterators`](#iterators)__,__[`Algorithms`](#algorithm)__,__[`Iterator Adapters`](#adapters)__,__[`Lambdas`](#lambdas)__,__[`Functors`](#functors)__,__[`Binders`](#binders)**
 
-**STL Containers:** **[`Arrays`](#arrays)__,__[`Vectors`](#vectors)__,__[`Deques`](#deques)__,__[`Lists`](#lists)__,__[`Forward Lists`](#forward_lists)__,__[`Sets & Multisets`](#sets_&_multisets)__,__[`Maps & Multimaps`](#maps_&_multimaps)__,__[`Unordered_Containers`](#unordered_containers)**
+**STL Containers:** **[`Arrays`](#arrays)__,__[`Vectors`](#vectors)__,__[`Deques`](#deques)__,__[`Lists`](#lists)__,__[`Forward Lists`](#forward_lists)__,__[`Sets & Multisets`](#sets_and_multisets)__,__[`Maps & Multimaps`](#maps_and_multimaps)__,__[`Unordered_Containers`](#unordered_containers)**
 
 **STL Iterators:**
 
@@ -253,7 +253,7 @@ FORWARD_LISTS
 
 ```
 
-SETS_&_MULTISETS 
+SETS_and_MULTISETS 
 -----------------
 ##### _/* initialization */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
@@ -283,7 +283,7 @@ SETS_&_MULTISETS
 ```cpp
 
 ```
-MAPS_&_MULTIMAPS
+MAPS_and_MULTIMAPS
 -----------------
 ##### _/* initialization */_ [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
 ```cpp
