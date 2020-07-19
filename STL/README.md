@@ -121,10 +121,10 @@ std::cout<<"get element - "<<std::get<2>(str)<<std::endl;
 ```cpp
 for(const auto& a : arr8)						/* range based loops */
 	std::cout <<" "<<a<<std::endl;
-	
-									/* template method */
+										
+/* generic function using templates */									
 template <typename T>
-void printArrayElements(const T& coll)
+void printArrayElements(const T& coll)					/* template method */
 {
 	for(const auto& t : coll) {
 		std::cout<<" "<<t;
