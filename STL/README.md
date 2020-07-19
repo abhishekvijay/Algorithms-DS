@@ -122,7 +122,7 @@ std::cout<<"get element - "<<std::get<2>(str)<<std::endl;
 for(const auto& a : arr8)						/* range based loops */
 	std::cout <<" "<<a<<std::endl;
 	
-/* template method */
+									/* template method */
 template <typename T>
 void printArrayElements(const T& coll)
 {
