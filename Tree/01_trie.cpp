@@ -43,8 +43,9 @@ int haveChild(TNode *head)
 
 	for(int i=0; i<MAX; ++i)
 	{
-		if (head->child[i] != NULL)
+		if (head->child[i] != NULL) {
 			child = 1;
+		}
 	}
 	return child;
 }

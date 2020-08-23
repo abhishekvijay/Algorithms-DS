@@ -3,11 +3,13 @@
 
 #include <stdio.h>
 
-extern void trie();
+extern void insert_binary_tree();
+//extern void trie();
 
 int main()
 {
-	trie();
+	insert_binary_tree();
+
 
 	return 0;
 }
