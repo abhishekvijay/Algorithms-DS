@@ -57,6 +57,42 @@ void setLeft(Node* tree, int x)
 	return;
 }
 
+void preOrderTraversal(Node* tree)
+{
+	if (tree != NULL)
+	{
+		std::cout<<tree->val<<std::endl;
+
+		preOrderTraversal(tree->left);		
+
+		preOrderTraversal(tree->right);
+	}
+}
+
+void postOrderTraversal(Node* tree)
+{
+	if (tree != NULL)
+	{
+		postOrderTraversal(tree->left);
+
+		postOrderTraversal(tree->right);
+
+		std::cout<<tree->val<<std::endl;
+	}
+}
+
+void inOrderTraversal(Node* tree)
+{
+	if (tree != NULL)
+	{
+		inOrderTraversal(tree->left);
+
+		std::cout<<tree->val<<std::endl;
+
+		inOrderTraversal(tree->right);
+	}
+}
+
 void insert_binary_tree()
 {
 	int arr[7] = {105,110,120,80,90,95,100};
