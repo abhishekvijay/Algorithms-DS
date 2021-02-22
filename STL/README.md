@@ -410,3 +410,18 @@ UNORDERED_CONTAINERS
 [stars-url]: https://github.com/abhishekvijay/Algorithms-DS/stargazers
 [issues-shield]: https://img.shields.io/github/issues/abhishekvijay/Algorithms-DS.svg?style=flat-square
 [issues-url]: https://github.com/abhishekvijay/Algorithms-DS/issues
+
+
+## BOOKS [<img align="right" width="20" height="20" src="./Resources/topdouble.png" title="Go to Contents">](#Contents)
+1. Code Complete
+2. Effective C++
+3. More Effective C++
+4. Modern C++
+5. Exceptional C++
+6. More Exceptional C++
+7. Modern C++ Design
+8. Modern C++ CookBook
+9. Effective STL
+10. The Boost C++ Libraries
+11. C++ Template Metaprogramming
+12. C++ STL with CPP11
